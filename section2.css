@@ -1,0 +1,174 @@
+/* ========== GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #aecaf5; /* White background */
+  color: #000000; /* Black text for readability */
+  line-height: 1.7;
+}
+
+/* ===== LOGO ===== */
+.logo-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo-top img {
+  height: 125px;
+  cursor: pointer;
+  transition: 
+    transform 0.3s ease,
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.logo-top img:hover {
+  transform: scale(1.3);
+  filter: brightness(1.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* ========== HERO ========== */
+.s2-hero {
+  padding: 120px 20px 70px;
+  text-align: center;
+}
+
+.s2-hero .icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.s2-hero h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  color: #003366; /* Dark blue */
+}
+
+.s2-hero p {
+  max-width: 760px;
+  margin: auto;
+  font-size: 16px;
+  color: #660000; /* Dark red */
+}
+
+/* ========== BENEFITS CARDS ========== */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  width: 80%;
+  margin: 40px auto 60px;
+}
+
+.benefit-card {
+  background: #ffffff;
+  padding: 26px 20px;
+  border-radius: 18px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: #660000; /* Dark red */
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== CONTENT ========== */
+.content {
+  width: 80%;
+  margin: auto;
+  padding: 10px 0 40px;
+  font-size: 16px;
+  color: #660000; /* Dark red */
+}
+
+.content p {
+  margin-bottom: 18px;
+}
+
+/* ========== CODE BLOCK ========== */
+.code-box {
+  width: 80%;
+  margin: 40px auto 60px;
+  background: linear-gradient(135deg, #660000, #003366); /* Red to blue gradient */
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+  overflow-x: auto;
+}
+
+.code-box pre {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+/* ========== MCQ ========== */
+.mcq {
+  width: 70%;
+  margin: 60px auto;
+  padding-top: 25px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.q {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #003366; /* Dark blue */
+}
+
+.mcq label {
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+  color: #660000; /* Dark red */
+}
+
+.mcq button {
+  margin-top: 14px;
+  padding: 12px 22px;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  color: #003366; /* Dark blue */
+}
+
+.mcq button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== FEEDBACK ========== */
+.feedback {
+  margin-top: 14px;
+  opacity: 0;
+  transition: 0.4s;
+  font-weight: 600;
+}
+
+.feedback.show {
+  opacity: 1;
+}
+
+.correct {
+  color: #660000; /* Dark red */
+}
+
+.wrong {
+  color: #003366; /* Dark blue */
+}

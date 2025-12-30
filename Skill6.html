@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saving Local Data</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Big Logo Styling */
+    .logo-link img {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main content */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .skill-page p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Benefits Grid Styling */
+    .benefits-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .benefit-item {
+      background: #f0f4f8;
+      padding: 20px;
+      border-radius: 12px;
+      width: 160px;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .benefit-item i {
+      color: #660000;
+      margin-bottom: 10px;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Code Block Styling */
+    .code-block {
+      text-align: left;
+      max-width: 600px;
+      margin: 30px auto;
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Consolas', monospace;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Quick Check Box */
+    .quick-check {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      text-align: left;
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #003366;
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="Front-end development.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Accessing and Saving Local Data</h1>
+  <p>
+    Browsers provide storage mechanisms that allow developers to save data locally, 
+    reducing dependency on continuous server communication and significantly improving application performance.
+  </p>
+
+  
+
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i data-lucide="wifi-off"></i>
+      <p><strong>Offline Access</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="gauge"></i>
+      <p><strong>Higher Speed</strong></p>
+    </div>
+  </div>
+
+  <h3><i data-lucide="code" style="vertical-align: middle; margin-right: 8px;"></i> Common Methods</h3>
+  <div class="code-block">
+<pre><code>// Saving a value
+localStorage.setItem("language", "English");
+
+// Retrieving a value
+const lang = localStorage.getItem("language");
+
+// Removing a specific item
+localStorage.removeItem("language");
+
+// Clearing all local storage data
+localStorage.clear();</code></pre>
+  </div>
+</main>
+
+<section class="quick-check">
+  <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+  <p><strong>Question:</strong> What happens if you call <code>localStorage.removeItem("user_id")</code>?</p>
+  <details>
+    <summary style="cursor: pointer; color: #660000; font-weight: bold; margin-top: 10px;">Click to reveal the answer</summary>
+    <div class="answer" style="padding-top: 15px; margin-top: 10px; border-top: 1px solid #eee;">
+      The specific data associated with the key "user_id" is <strong>permanently deleted</strong> from that user's browser storage. Other keys in storage remain unaffected.
+    </div>
+  </details>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic: Set a unique key for this section (e.g., section4)
+  localStorage.setItem("section4_completed", "true");
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* 1. Global Styles & Deep Purple Gradient */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Gradient transitions from light lavender to a deep indigo footer-feel */
+  background: linear-gradient(180deg, #f3e7ff 0%, #a89cc8 45%, #2e1a47 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  /* Dark text for the light top section */
+  color: #1a0f2e; 
+}
+
+/* 2. Header & Introduction */
+.home-header {
+  text-align: center;
+  padding: 80px 20px 20px 20px;
+}
+
+.home-header h1 {
+  color: #3b2d61;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 20px auto 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #4a3f75;
+  font-weight: 500;
+}
+
+/* 3. Carousel Section Layout */
+.carousel-section {
+  padding-bottom: 80px;
+}
+
+.carousel-title {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  /* White text for contrast against the darker middle section */
+  color: #ffffff; 
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  overflow: hidden;
+  padding: 40px;
+}
+
+/* 4. Carousel Track & Animation */
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  animation: scroll 25s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 5. Home Page Cards */
+.card {
+  flex: 0 0 auto;
+  min-width: 260px;
+  width: 300px;
+  margin-right: 20px;
+  background: #ffffff; /* Stark white background for high contrast */
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Clips the image to card corners */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px 25px 30px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #2e1a47;
+  font-size: 1.4rem;
+}
+
+.card p {
+  margin: 0;
+  color: #5a4d8c;
+  font-size: 1rem;
+}
+
+/* 6. Navigation Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff; 
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  color: #2e1a47;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.arrow:hover {
+  background: #f3e7ff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.arrow.left { left: 30px; }
+.arrow.right { right: 30px; }
+
+/* 7. Skill Page Specific Visuals */
+.skill-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+   color: #000000;
+ /* White text for the dark background sections */
+}
+
+.skill-main-icon {
+  width: 64px;
+  height: 64px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.skill-visual-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.skill-inline-img {
+  width: 45%;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.info-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid #f3e7ff;
+  margin: 30px 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.benefit-item {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  color: #2e1a47;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.benefit-item i {
+  color: #8e7cc3;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* 8. Code Blocks */
+.code-block {
+  background: #1a0f29; /* Darker obsidian purple for code */
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  color: #eaddff; /* Light purple for code syntax */
+  border: 1px solid #483d6b;
+  font-family: 'Consolas', 'Monaco', monospace;
+}

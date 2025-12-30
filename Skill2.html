@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Data Storage</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Target the logo specifically */
+    .logo-link img {
+      width: 180px; /* Big Logo */
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main title and icon */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center; /* Center text content */
+    }
+
+    .skill-main-icon {
+      width: 60px;
+      height: 60px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    /* Benefits Grid Styling */
+    .benefits-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .benefit-item {
+      background: #f0f4f8;
+      padding: 20px;
+      border-radius: 12px;
+      width: 150px;
+      transition: transform 0.2s;
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .benefit-item i {
+      color: #660000;
+      margin-bottom: 10px;
+    }
+
+    /* Centering Example Block */
+    .code-block {
+      text-align: left; /* Keep code aligned left inside centered container */
+      max-width: 500px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="Front-end development.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Using Local Data Storage</h1>
+
+  <p style="font-size: 1.1rem; line-height: 1.8;">
+    Local data storage allows web applications to store data directly
+    inside the user's browser instead of requesting it repeatedly from a server.
+  </p>
+
+  
+
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i data-lucide="zap"></i>
+      <p><strong>Faster Loading</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="server"></i>
+      <p><strong>Less Server Strain</strong></p>
+    </div>
+  </div>
+
+  <h3>Practical Example</h3>
+  <div class="code-block">
+<pre><code>
+// Saving data to localStorage
+localStorage.setItem("theme", "dark");
+
+// Retrieving data
+const currentTheme = localStorage.getItem("theme");
+console.log(currentTheme); // Outputs: dark
+</code></pre>
+  </div>
+</main>
+
+<section class="quick-check" style="max-width: 800px; margin: 0 auto 60px;">
+  <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+  <p><strong>Question:</strong> Which tool would you use to save a user's theme preference so it persists even after they restart their computer?</p>
+  <details>
+    <summary style="cursor: pointer; color: #660000; font-weight: bold;">Click to reveal the answer</summary>
+    <div class="answer" style="padding: 15px; background: #f0f4f8; border-radius: 8px; margin-top: 10px; text-align: left;">
+      <strong>localStorage</strong>. Unlike sessionStorage, data in localStorage has no expiration date and stays saved until explicitly removed via code or by clearing the browser cache.
+    </div>
+  </details>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic: Marks this section as completed for the main portal
+  localStorage.setItem("section4_completed", "true"); 
+</script>
+</body>
+</html>

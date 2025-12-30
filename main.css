@@ -1,0 +1,153 @@
+/* Portal Styles based on Dark Blue & Dark Red Palette */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #aecaf5; /* White background */
+  color: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Nav & Logo Area */
+.portal-nav {
+  padding: 30px 5%;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.main-logo {
+  height: 90px;
+  width: auto;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.instructor-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #660000; /* Dark Red */
+  font-size: 0.9rem;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  margin: 10px 0;
+  color: #003366; /* Dark Blue */
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #660000; /* Dark Red */
+  max-width: 700px;
+  margin: 15px auto 0;
+}
+
+/* Grid Layout */
+.portal-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px 80px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #003366; /* Dark Blue */
+  font-size: 2rem;
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Path Cards */
+.path-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #003366; /* Dark Blue */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(0, 51, 102, 0.2); /* Light Blue border */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.path-card:hover {
+  transform: translateY(-10px);
+  border-color: #003366;
+  box-shadow: 0 20px 45px rgba(0, 51, 102, 0.15);
+}
+
+/* Special styling for Web Development card */
+.path-card.featured {
+  border: 2px solid #003366;
+  background: rgba(0, 51, 102, 0.02);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background: #f0f4f8; /* Very light blue */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  color: #003366; /* Dark Blue */
+  border: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.path-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #003366;
+}
+
+.path-card p {
+  line-height: 1.5;
+  color: #660000; /* Dark Red */
+  margin: 0;
+  flex-grow: 1;
+}
+
+.explore-link {
+  margin-top: 25px;
+  font-weight: 700;
+  color: #003366;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s;
+}
+
+.path-card:hover .explore-link {
+  gap: 15px;
+  color: #660000;
+}
+
+/* Footer */
+.portal-footer {
+  text-align: center;
+  padding: 60px 40px 40px;
+  color: #003366;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+
+}

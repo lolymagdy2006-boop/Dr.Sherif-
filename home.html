@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Development Back-End Target Skills</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="auth.js"></script>
+  <script>
+    // Protect this page
+    Auth.requireAuth({ loginPage: 'login.html' });
+  </script>
+</head>
+<body>
+
+  <script>
+    // Mark this specific section as completed when the user opens it
+    localStorage.setItem("section1_completed", "true");
+</script>
+  
+<header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+    <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+  </div>
+
+<!-- ========== HERO SECTION ========== -->
+  <h1>Development Back-End Target Skills</h1>
+  <p>
+    This website presents the core back-end development skills required to build
+    modern, scalable, and high-performance web applications.
+    Each skill is explained in a dedicated page with clear concepts and practical understanding.
+  </p>
+  <a href="#syllabus" class="hero-btn">Explore the Syllabus</a>
+
+<!-- ========== CAROUSEL SECTION ========== -->
+<section class="carousel-section" id="syllabus">
+
+  <div class="carousel-track">
+<a href="section1.html" class="card-link">
+    <div class="card">
+      <img src="img14.jfif">
+      <div class="card-content">
+        <h3>Server-Side Frameworks</h3>
+        <p>Backend logic, APIs & web services</p>
+      </div>
+    </div>
+</a>
+
+<a href="section2.html" class="card-link">
+    <div class="card">
+      <img src="img12.png">
+      <div class="card-content">
+        <h3>Object-Oriented Programming</h3>
+        <p>Reusable components & clean code</p>
+      </div>
+    </div>
+</a>
+
+<a href="section3.html" class="card-link">
+    <div class="card">
+      <img src="img13.jpg">
+      <div class="card-content">
+        <h3>Web Services</h3>
+        <p>Objects, standards & data exchange</p>
+      </div>
+    </div>
+</a>
+
+<a href="section4.html" class="card-link">
+    <div class="card">
+      <img src="img17.png">
+      <div class="card-content">
+        <h3>Framework Discovery</h3>
+        <p>Architecture, MVC & use cases</p>
+      </div>
+    </div>
+</a>
+
+<a href="section5.html" class="card-link">
+    <div class="card">
+      <img src="img15.jpg">
+      <div class="card-content">
+        <h3>Design Patterns</h3>
+        <p>Factory, Adapter & Observer</p>
+      </div>
+    </div>
+</a>
+
+<a href="test.html" class="card-link">
+        <div class="card">
+      <img src="img16.jpg">
+      <div class="card-content">
+        <h3>Final Test</h3>
+        <p>Evaluate your understanding of all sections</p>
+      </div>
+    </div>
+    
+</a>
+
+  </div>
+
+</section>
+
+<script src="home.js"></script>
+</body>
+</html>

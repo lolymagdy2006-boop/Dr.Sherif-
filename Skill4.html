@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-Driven Programming</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Big Logo Styling */
+    .logo-link img {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main content */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .skill-page p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Info Section Styling */
+    .info-section {
+      background: #f0f4f8;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: left;
+      border-left: 5px solid #003366;
+    }
+
+    .info-section h3 {
+      color: #003366;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 0;
+    }
+
+    /* Code Block Styling */
+    .code-block {
+      text-align: left;
+      max-width: 650px;
+      margin: 30px auto;
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Consolas', monospace;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Quick Check Box */
+    .quick-check {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      text-align: left;
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="Front-end development.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Event-Driven Programming & Promises</h1>
+  <p>
+    Event-driven programming focuses on responding to events such as user clicks, 
+    form submissions, or completed network requests. It allows the browser to remain 
+    interactive while waiting for actions to occur.
+  </p>
+
+  
+
+  <div class="info-section">
+    <h3><i data-lucide="shield-check"></i> The Power of Promises</h3>
+    <p>
+      Promises are used to manage asynchronous operations, representing a value 
+      available in the future. They provide a cleaner way to handle success or failure 
+      compared to traditional callbacks, helping you avoid "callback hell."
+    </p>
+
+    
+  </div>
+
+  <h3><i data-lucide="code" style="vertical-align: middle; margin-right: 8px;"></i> Practical Promise Example</h3>
+  <div class="code-block">
+<pre><code>// Creating a basic Promise
+const myPromise = new Promise((resolve, reject) => {
+  const success = true;
+  if (success) {
+    resolve("Operation successful! 🎉");
+  } else {
+    reject("Operation failed. ❌");
+  }
+});
+
+// Using the Promise
+myPromise
+  .then(result => console.log(result))
+  .catch(error => console.error(error));</code></pre>
+  </div>
+</main>
+
+<section class="quick-check">
+  <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+  <p><strong>Question:</strong> What does it mean if a Promise is in the "Pending" state?</p>
+  <details>
+    <summary style="cursor: pointer; color: #660000; font-weight: bold; margin-top: 10px;">Click to reveal the answer</summary>
+    <div class="answer" style="padding-top: 15px; margin-top: 10px; border-top: 1px solid #eee;">
+      It means the operation has started but has not yet finished. It is the initial state of a Promise, waiting to either be <strong>Fulfilled</strong> (success) or <strong>Rejected</strong> (error).
+    </div>
+  </details>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic: Set a unique key for this section (e.g., section2)
+  localStorage.setItem("section2_completed", "true");
+</script>
+</body>
+</html>

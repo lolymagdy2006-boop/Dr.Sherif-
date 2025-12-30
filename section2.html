@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 2 – OOP & Clean Code</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .home-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo-container .logo {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-container .logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hero Styling */
+    .s2-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .s2-hero h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* Benefits Grid */
+    .benefits {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .benefit-card {
+      background: #f0f4f8;
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #003366;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Content and Code Box */
+    .content {
+      max-width: 850px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #333;
+      text-align: left;
+    }
+
+    .code-box {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 30px auto;
+      font-family: 'Consolas', monospace;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* MCQ Styling */
+    .mcq {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #003366;
+      text-align: left;
+    }
+
+    .mcq label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .mcq button {
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header class="home-header">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="logo PS.png" alt="University Logo" class="logo">
+    </a>
+  </div>
+</header>
+
+<section class="s2-hero">
+  <h1>Object-Oriented Programming & Clean Code</h1>
+  <p>
+    Object-Oriented Programming organizes software into reusable objects that
+    combine data and behavior, making applications easier to maintain, scale, and extend.
+  </p>
+</section>
+
+<div class="benefits">
+  <div class="benefit-card">🔁 Reusability</div>
+  <div class="benefit-card">🧠 Better Structure</div>
+  <div class="benefit-card">🛠 Easier Maintenance</div>
+</div>
+
+<section class="content">
+  <p>
+    OOP is based on four core pillars: <strong>Encapsulation</strong>, <strong>Inheritance</strong>, 
+    <strong>Polymorphism</strong>, and <strong>Abstraction</strong>. These principles help developers 
+    model real-world systems in a logical way, ensuring that data is protected and code is shared efficiently.
+  </p>
+
+  
+
+  <p style="margin-top: 30px;">
+    <strong>Clean Code</strong> emphasizes readability and simplicity. OOP supports clean code by
+    encouraging small, focused classes and a clear separation of responsibilities. Following 
+    SOLID principles ensures that your objects are robust and easy to test.
+  </p>
+
+  
+</section>
+
+<div class="code-box">
+<pre><code>// Example of a Clean OOP Class
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+
+  // A focused method with a single responsibility
+  sendWelcomeEmail() {
+    console.log(`Sending email to ${this.email}...`);
+  }
+}
+</code></pre>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 1:</strong> What is the main benefit of OOP?</p>
+  <label><input type="radio" name="q1" value="a"> More complex code</label>
+  <label><input type="radio" name="q1" value="b"> Reusable components</label>
+  <label><input type="radio" name="q1" value="c"> No structure</label>
+  <button onclick="checkMCQ('q1','b','f1')">Check Answer</button>
+  <div class="feedback" id="f1"></div>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 2:</strong> Why is clean code important?</p>
+  <label><input type="radio" name="q2" value="a"> It removes bugs automatically</label>
+  <label><input type="radio" name="q2" value="b"> It improves readability and maintenance</label>
+  <label><input type="radio" name="q2" value="c"> It avoids the need for testing</label>
+  <button onclick="checkMCQ('q2','b','f2')">Check Answer</button>
+  <div class="feedback" id="f2"></div>
+</div>
+
+<script>
+  // Simple check function for the MCQs
+  function checkMCQ(name, correct, feedbackId) {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const feedback = document.getElementById(feedbackId);
+    
+    if (!selected) {
+      feedback.textContent = "Please select an answer first.";
+      feedback.style.color = "orange";
+      return;
+    }
+
+    if (selected.value === correct) {
+      feedback.textContent = "Correct! " + (feedbackId === 'f1' ? "OOP focuses on reusability and maintainability." : "Clean code makes software easier to read and maintain.");
+      feedback.style.color = "green";
+    } else {
+      feedback.textContent = "Try again! Think about the long-term maintenance of code.";
+      feedback.style.color = "red";
+    }
+  }
+
+  // Mark section as completed in localStorage
+  localStorage.setItem("section2_completed", "true");
+</script>
+</body>
+</html>

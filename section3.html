@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 3 – Web Services & Async Requests</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .home-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo-container .logo {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-container .logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hero Styling */
+    .s3-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .s3-hero h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* Main Content Layout */
+    .s3-main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .why-box {
+      background: #f0f4f8;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: left;
+      border-left: 5px solid #003366;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    /* Practical Example & Code */
+    .example-title {
+      font-weight: bold;
+      color: #003366;
+      font-size: 1.4rem;
+      margin: 30px 0 10px 0;
+      text-align: center;
+    }
+
+    .code-box {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+      font-family: 'Consolas', monospace;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      overflow-x: auto;
+    }
+
+    /* MCQ Styling */
+    .mcq {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #660000;
+      text-align: left;
+    }
+
+    .mcq label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .mcq button {
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header class="home-header">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="logo PS.png" alt="University Logo" class="logo">
+    </a>
+  </div>
+</header>
+
+<section class="s3-hero">
+  <h1>Asynchronous Requests and Web Services</h1>
+  <p>
+    Master the ability to load data in the background without interrupting the user experience.
+  </p>
+</section>
+
+<section class="s3-main">
+  <p>
+    Asynchronous requests allow a web page to communicate with a server without 
+    reloading the entire page. This means users can continue interacting with the 
+    application (scrolling, clicking, typing) while data is being fetched.
+  </p>
+
+  
+
+  <p style="margin-top: 30px;">
+    <strong>Web services</strong> act as the bridge between different systems. By exposing functionality through 
+    APIs (Application Programming Interfaces), they allow a mobile app, a website, and a desktop 
+    tool to all share the same database and business logic.
+  </p>
+
+  
+</section>
+
+<div class="why-box">
+  <h3><i data-lucide="info" style="vertical-align: middle; margin-right: 8px;"></i> Why it is important</h3>
+  <p>
+    Asynchronous communication is the foundation of modern "Single Page Applications" (SPAs). It improves 
+    <strong>performance</strong>, <strong>responsiveness</strong>, and overall user experience by 
+    preventing the browser from "freezing" during data operations.
+  </p>
+</div>
+
+<div class="example-title">&lt;/&gt; Practical Example (The Fetch API)</div>
+
+<div class="code-box">
+<pre><code>
+// Fetching data from a Web Service asynchronously
+fetch('https://api.example.com/data')
+  .then(response => response.json()) // Parsing JSON
+  .then(data => {
+    console.log("Success:", data);
+    updateUI(data); // Refresh part of the page
+  })
+  .catch(error => console.error("Error:", error));
+</code></pre>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 1:</strong> What is the main benefit of asynchronous requests?</p>
+  <label><input type="radio" name="q1" value="a"> Faster page styling</label>
+  <label><input type="radio" name="q1" value="b"> Better responsiveness without page reload</label>
+  <label><input type="radio" name="q1" value="c"> Removing the need for servers</label>
+  <button onclick="checkMCQ('q1','b','f1')">Check Answer</button>
+  <div class="feedback" id="f1"></div>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 2:</strong> What role do web services play in modern applications?</p>
+  <label><input type="radio" name="q2" value="a"> They design user interfaces</label>
+  <label><input type="radio" name="q2" value="b"> They enable communication between systems</label>
+  <label><input type="radio" name="q2" value="c"> They replace client-side code</label>
+  <button onclick="checkMCQ('q2','b','f2')">Check Answer</button>
+  <div class="feedback" id="f2"></div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  function checkMCQ(name, correct, feedbackId) {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const feedback = document.getElementById(feedbackId);
+    
+    if (!selected) {
+      feedback.textContent = "Please select an answer.";
+      feedback.style.color = "orange";
+      return;
+    }
+
+    if (selected.value === correct) {
+      feedback.textContent = "Correct! " + (feedbackId === 'f1' ? "Async allows the page to stay interactive." : "Web services bridge different technologies.");
+      feedback.style.color = "green";
+    } else {
+      feedback.textContent = "Try again! Think about how the UI behaves during loading.";
+      feedback.style.color = "red";
+    }
+  }
+
+  // Mark section as completed
+  localStorage.setItem("section3_completed", "true");
+</script>
+</body>
+</html>

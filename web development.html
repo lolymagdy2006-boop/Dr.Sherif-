@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Target Skills</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="auth.js"></script>
+  <script>
+    // Protect this page
+    Auth.requireAuth({ loginPage: 'login.html' });
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+    <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+  </div>
+  
+  <h1>Web Development</h1>
+
+  <p class="intro">
+    This website presents the core competencies required to design, develop, and manage modern web applications. 
+    Each skill in this syllabus is explained with deep analysis of systems, constraints, and user needs.
+  </p>
+</header>
+
+<section class="carousel-section">
+  <h2 class="carousel-title">      
+    </i>Explore the Syllabus</h2>
+
+  <div class="carousel-wrapper">
+    <button class="arrow left" id="prevBtn" type="button"><i data-lucide="chevron-left"></i></button>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        
+        <a class="card" href="Skill1M.html">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Problem Solving" class="card-img">
+          <div class="card-content">
+            <i data-lucide="brain-circuit"></i>
+            <h3>Strategic Problem Solving</h3>
+            <p>Analysis & Stakeholder Collaboration</p>
+          </div>
+        </a>
+        
+        <a class="card" href="Skill2M.html">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=300&q=80" alt="Entrepreneurship" class="card-img">
+          <div class="card-content">
+            <i data-lucide="rocket"></i>
+            <h3>Digital Entrepreneurship</h3>
+            <p>Value Creation & Innovation</p>
+          </div>
+        </a>
+        
+        <a class="card" href="Skill3M.html">
+          <img src="https://images.unsplash.com/photo-1508921340878-ba53e1f016ec?auto=format&fit=crop&w=300&q=80" alt="SAE Framework" class="card-img">
+          <div class="card-content">
+            <i data-lucide="component"></i>
+            <h3>SAE Framework</h3>
+            <p>Methodology for Global Apps</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill4M.html">
+          <img src="download.webp" alt="UX" class="card-img">
+          <div class="card-content">
+            <i data-lucide="smile"></i>
+            <h3>High-Quality UX</h3>
+            <p>Accessibility & Simplicity</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill5M.html">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" alt="Client Side" class="card-img">
+          <div class="card-content">
+            <i data-lucide="monitor"></i>
+            <h3>Client-Side Dev</h3>
+            <p>UI Performance & Modular Design</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill6M.html">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=300&q=80" alt="Server Side" class="card-img">
+          <div class="card-content">
+            <i data-lucide="server"></i>
+            <h3>Server-Side & APIs</h3>
+            <p>Scalability & Maintainability</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill7M.html">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=300&q=80" alt="Security" class="card-img">
+          <div class="card-content">
+            <i data-lucide="shield-check"></i>
+            <h3>System Security</h3>
+            <p>Encryption & Data Protection</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill8M.html">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <i data-lucide="zap"></i>
+            <h3>Performance</h3>
+            <p>Caching & Fast Loading</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <button class="arrow right" id="nextBtn" type="button"><i data-lucide="chevron-right"></i></button>
+  </div>
+</section>
+
+<section class="final-test" id="webDevTest">
+  <h2>Web Development (Full-Stack) Assessment</h2>
+  <p class="test-desc">Topics: APIs, Servers, Databases, and Architecture. Time: <strong>5 minutes</strong>.</p>
+  
+  <button id="webStartBtn" class="test-btn">Start Web Dev Test</button>
+
+  <div id="webTestContainer" class="hidden" style="display:none;">
+    <div class="test-header">
+      <span id="webTimer">05:00</span>
+    </div>
+    <div id="webQuestionsArea"></div>
+    <button id="webSubmitBtn" class="test-btn">Submit Assessment</button>
+    <div id="webTestResult"></div>
+  </div>
+</section>
+
+<script src="web development.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Problem Solving</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Big Logo Styling */
+    .logo-link img {
+      width: 180px; /* Big Logo */
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main content */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .skill-page p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Info Section Styling */
+    .info-section {
+      background: #f0f4f8;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: left;
+      border-left: 5px solid #003366;
+    }
+
+    .info-section h3 {
+      color: #003366;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 0;
+    }
+
+    /* Quick Check Box */
+    .quick-check {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      text-align: left;
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .skill-inline-img {
+      border-radius: 15px;
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="index.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Strategic Problem Solving</h1>
+  
+  <div class="skill-visual-container">
+    <p>
+      Designing a strategic response to complex problems requires deep analysis, stakeholder collaboration, and iterative thinking. Complex problems are not solved by isolated decisions, but by understanding systems, constraints, and user needs.
+    </p>
+
+    
+
+    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80" class="skill-inline-img" alt="Problem Solving">
+  </div>
+
+  <div class="info-section">
+    <h3><i data-lucide="users"></i> Co-Design Strategy</h3>
+    <p>
+      Co-design ensures solutions are realistic, scalable, and aligned with real-world expectations by involving designers, developers, and users from the beginning.
+    </p>
+    
+    
+  </div>
+</main>
+
+<section class="quick-check">
+  <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+  <p><strong>Question:</strong> In OOP, what is the main benefit of "Inheritance"?</p>
+  <details>
+    <summary style="cursor: pointer; color: #660000; font-weight: bold; margin-top: 10px;">Click to reveal the answer</summary>
+    <div class="answer" style="padding-top: 15px; margin-top: 10px; border-top: 1px solid #eee;">
+      Inheritance allows a <strong>subclass</strong> to reuse code from a parent class. This reduces redundancy and makes it easier to maintain common logic across different objects.
+    </div>
+  </details>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic: Set a unique key for this section (e.g., skill1m_completed)
+  localStorage.setItem("skill1m_completed", "true");
+</script>
+</body>
+</html>

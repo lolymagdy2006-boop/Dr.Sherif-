@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Templates</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Target the logo specifically */
+    .logo-link img {
+      width: 180px; /* Big Logo */
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main title and page content */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .skill-visual-container p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    /* Benefits Grid Styling */
+    .benefits-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .benefit-item {
+      background: #f0f4f8;
+      padding: 20px;
+      border-radius: 12px;
+      width: 180px;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      background: #e2e8f0;
+    }
+
+    .benefit-item i {
+      color: #660000;
+      margin-bottom: 10px;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Code Block Styling */
+    .code-block {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Consolas', 'Monaco', monospace;
+    }
+
+    .quick-check {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="Front-end development.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Content Templates and Dynamic Data</h1>
+  
+  <div class="skill-visual-container">
+    <p>
+      Content templates define the structure of a web page while allowing data to be inserted dynamically at runtime. 
+      Instead of repeating HTML code, developers use placeholders that are filled with data when needed.
+    </p>
+
+    
+
+    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=400&q=80" alt="Templates" class="skill-inline-img" style="border-radius: 15px; margin-bottom: 30px;">
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i data-lucide="copy"></i>
+      <p><strong>Code Reusability</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="palette"></i>
+      <p><strong>Consistent Design</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="settings"></i>
+      <p><strong>Easier Maintenance</strong></p>
+    </div>
+  </div>
+
+  <h3><i data-lucide="code" style="vertical-align: middle; margin-right: 8px;"></i> Template Example</h3>
+  <div class="code-block">
+<pre><code>// Using Template Literals for Dynamic HTML
+const title = "New Article";
+const description = "This content was added dynamically.";
+
+card.innerHTML = `
+  &lt;h3&gt;${title}&lt;/h3&gt;
+  &lt;p&gt;${description}&lt;/p&gt;
+`;</code></pre>
+  </div>
+</main>
+
+<section class="quick-check">
+  <div style="background: #f8fafc; padding: 30px; border-radius: 15px; border-left: 5px solid #003366;">
+    <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+    <p><strong>Question:</strong> In a template literal, what is the purpose of the <code>${}</code> symbol?</p>
+    <details>
+      <summary style="cursor: pointer; color: #660000; font-weight: bold; margin-top: 10px;">Click to reveal the answer</summary>
+      <div class="answer" style="padding-top: 15px; margin-top: 10px; border-top: 1px solid #e2e8f0;">
+        It is a <strong>placeholder</strong> (interpolation). It allows you to inject dynamic JavaScript variables, expressions, or function calls directly into your string structure, which is then rendered as part of the HTML.
+      </div>
+    </details>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic: Marks this section as completed for the main portal
+  localStorage.setItem("section5_completed", "true"); 
+</script>
+</body>
+</html>

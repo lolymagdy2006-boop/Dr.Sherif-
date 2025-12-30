@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 5 – Design Patterns</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .home-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo-container .logo {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-container .logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hero Styling */
+    .s5-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .s5-hero h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* Pattern Grid */
+    .patterns {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+      max-width: 1100px;
+    }
+
+    .pattern-card {
+      background: #f0f4f8;
+      padding: 25px;
+      border-radius: 15px;
+      width: 280px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .pattern-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      background: #e2e8f0;
+    }
+
+    .pattern-card h3 {
+      color: #003366;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pattern-card .use {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #555;
+      padding-top: 10px;
+      border-top: 1px solid #cbd5e0;
+    }
+
+    /* Why Box */
+    .why-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: left;
+      border-left: 5px solid #003366;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Code Box */
+    .code-box {
+      background: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 40px auto;
+      font-family: 'Consolas', monospace;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* MCQ Styling */
+    .mcq {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #660000;
+      text-align: left;
+    }
+
+    .mcq label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .mcq button {
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header class="home-header">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="logo PS.png" alt="University Logo" class="logo">
+    </a>
+  </div>
+</header>
+
+<section class="s5-hero">
+  <h1>Recognizing and Using Design Patterns</h1>
+  <p>
+    Design patterns are proven, high-level solutions to recurring software design problems. 
+    They serve as templates that help developers build flexible, reusable, and maintainable codebases.
+  </p>
+</section>
+
+<section class="patterns">
+  <div class="pattern-card">
+    <h3><i data-lucide="factory"></i> Factory Method</h3>
+    <p class="desc">Creates objects without specifying the exact class to instantiate, centralizing creation logic.</p>
+    
+    <p class="use"><strong>Use case:</strong> When an application needs to manage different types of a single entity (e.g., Payment Types).</p>
+  </div>
+
+  <div class="pattern-card">
+    <h3><i data-lucide="plug"></i> Adapter Pattern</h3>
+    <p class="desc">Acts as a bridge between two incompatible interfaces, allowing them to collaborate seamlessly.</p>
+    
+    <p class="use"><strong>Use case:</strong> Integrating a 3rd party legacy library into a modern system.</p>
+  </div>
+
+  <div class="pattern-card">
+    <h3><i data-lucide="bell"></i> Observer Pattern</h3>
+    <p class="desc">Defines a dependency where multiple objects are notified automatically of any state changes.</p>
+    
+    <p class="use"><strong>Use case:</strong> Real-time notifications, event listeners, and live data dashboards.</p>
+  </div>
+</section>
+
+<div class="why-box">
+  <h3><i data-lucide="lightbulb" style="vertical-align: middle; margin-right: 8px;"></i> Why design patterns matter</h3>
+  <p>
+    Design patterns provide a common language for developers. Instead of explaining a complex 
+    logic chain, you can simply say, "We are using an Observer here." This improves 
+    <strong>architectural thinking</strong> and long-term <strong>code scalability</strong>.
+  </p>
+</div>
+
+<div class="code-box">
+<pre><code>
+// Simplified Observer Example
+class Subject {
+  constructor() { this.observers = []; }
+  
+  subscribe(fn) { this.observers.push(fn); }
+  
+  notify(data) {
+    this.observers.forEach(fn => fn(data));
+  }
+}
+
+const newsFeed = new Subject();
+newsFeed.subscribe(user => console.log("User notified!"));
+newsFeed.notify(); 
+</code></pre>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 1:</strong> What is the main goal of design patterns?</p>
+  <label><input type="radio" name="q1" value="a"> Replace programming languages</label>
+  <label><input type="radio" name="q1" value="b"> Provide reusable solutions to common problems</label>
+  <label><input type="radio" name="q1" value="c"> Eliminate the need for testing</label>
+  <button onclick="checkMCQ('q1','b','f1')">Check Answer</button>
+  <div class="feedback" id="f1"></div>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 2:</strong> Which pattern allows incompatible systems to work together?</p>
+  <label><input type="radio" name="q2" value="a"> Factory</label>
+  <label><input type="radio" name="q2" value="b"> Adapter</label>
+  <label><input type="radio" name="q2" value="c"> Observer</label>
+  <button onclick="checkMCQ('q2','b','f2')">Check Answer</button>
+  <div class="feedback" id="f2"></div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  function checkMCQ(name, correct, feedbackId) {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const feedback = document.getElementById(feedbackId);
+    
+    if (!selected) {
+      feedback.textContent = "Please select an answer.";
+      feedback.style.color = "orange";
+      return;
+    }
+
+    if (selected.value === correct) {
+      feedback.textContent = "Correct! " + (feedbackId === 'f1' ? "Patterns are like blueprints for solving structural problems." : "The Adapter pattern 'adapts' one interface to look like another.");
+      feedback.style.color = "green";
+    } else {
+      feedback.textContent = "Try again. Think about the specific purpose of that pattern.";
+      feedback.style.color = "red";
+    }
+  }
+
+  // Mark section as completed in localStorage
+  localStorage.setItem("section5_completed", "true");
+</script>
+</body>
+</html>

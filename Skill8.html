@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client-Side Frameworks</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Big Logo Styling */
+    .logo-link img {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main content */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .skill-page p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Framework Grid Styling */
+    .benefits-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .benefit-item {
+      background: #f0f4f8;
+      padding: 20px;
+      border-radius: 12px;
+      width: 180px;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      background: #e2e8f0;
+    }
+
+    .benefit-item i {
+      color: #660000;
+      margin-bottom: 10px;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Info Section Styling */
+    .info-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: left;
+      border-left: 5px solid #003366;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Quick Check Box */
+    .quick-check {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      text-align: left;
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="Front-end development.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Client-Side Development Frameworks</h1>
+  <p>
+    Modern web development relies on frameworks like React, Angular, and Vue. 
+    These tools provide structured ways to manage complex user interfaces, 
+    handle data state, and synchronize the UI with backend services.
+  </p>
+
+  
+
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i data-lucide="layers"></i>
+      <p><strong>Components</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="refresh-cw"></i>
+      <p><strong>State Management</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="box"></i>
+      <p><strong>Virtual DOM</strong></p>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3><i data-lucide="book-open" style="margin-right: 10px;"></i> Why it matters</h3>
+    <p>
+      As web apps grow, managing plain JavaScript becomes difficult. Frameworks introduce 
+      <strong>Component-based architecture</strong>, allowing developers to break the UI into 
+      reusable pieces, making development faster and significantly reducing bugs.
+    </p>
+    
+    
+  </div>
+</main>
+
+<section class="quick-check">
+  <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+  <p><strong>Question:</strong> What is a major advantage of using React or Vue over plain JavaScript for a complex dashboard?</p>
+  <details>
+    <summary style="cursor: pointer; color: #660000; font-weight: bold; margin-top: 10px;">Click to reveal the answer</summary>
+    <div class="answer" style="padding-top: 15px; margin-top: 10px; border-top: 1px solid #eee;">
+      They use <strong>Component-based architecture</strong>. This makes code organized, reusable, and easier to scale because you can work on individual pieces of the UI (like a sidebar or a chart) without breaking the rest of the application.
+    </div>
+  </details>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic: Set a unique key for this section (e.g., section7)
+  localStorage.setItem("section7_completed", "true");
+</script>
+</body>
+</html>

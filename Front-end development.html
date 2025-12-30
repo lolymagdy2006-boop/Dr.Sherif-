@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front-End Development Skills</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="auth.js"></script>
+  <script>
+    // Protect this page
+    Auth.requireAuth({ loginPage: 'login.html' });
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+    <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+  </div>
+
+  <h1>Front-End Development</h1>
+
+  <p class="intro">
+    This website presents the core front-end development skills required
+    to build modern, interactive, and high-performance web applications.
+    Each skill in this syllabus is explained in a dedicated page with
+    clear concepts and practical examples.
+  </p>
+</header>
+
+<section class="carousel-section">
+  <h2 class="carousel-title"></i>Explore the Syllabus</h2>
+
+  <div class="carousel-wrapper">
+    <button class="arrow left" id="prevBtn" type="button"><i data-lucide="chevron-left"></i></button>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        
+        <a class="card" href="Skill1.html">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="Async" class="card-img">
+          <div class="card-content">
+            <i data-lucide="refresh-cw"></i>
+            <h3>Asynchronous Requests</h3>
+            <p>Fetch API & Web Services</p>
+          </div>
+        </a>
+        
+        <a class="card" href="Skill2.html">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=300&q=80" alt="Storage" class="card-img">
+          <div class="card-content">
+            <i data-lucide="database"></i>
+            <h3>Local Data Storage</h3>
+            <p>Optimize loading times</p>
+          </div>
+        </a>
+        
+        <a class="card" href="Skill3.html">
+          <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=300&q=80" alt="Templates" class="card-img">
+          <div class="card-content">
+            <i data-lucide="layout-template"></i>
+            <h3>Content Templates</h3>
+            <p>Dynamic data integration</p>
+          </div>
+        </a>
+        
+        <a class="card" href="Skill4.html">
+          <img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?auto=format&fit=crop&w=300&q=80" alt="Events" class="card-img">
+          <div class="card-content">
+            <i data-lucide="zap"></i>
+            <h3>Event Programming</h3>
+            <p>Promises & async logic</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill5.html">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" alt="HTTP" class="card-img">
+          <div class="card-content">
+            <i data-lucide="globe"></i>
+            <h3>HTTP Requests</h3>
+            <p>Async & Error Handling</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill7.html">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Caching" class="card-img">
+          <div class="card-content">
+            <i data-lucide="hard-drive"></i>
+            <h3>Caching & Performance</h3>
+            <p>Fast loading strategies</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill6.html">
+          <img src="istockphoto-1979289151-1024x1024.jpg" alt="Access" class="card-img">
+          <div class="card-content">
+            <i data-lucide="save"></i>
+            <h3>Accessing Local Data</h3>
+            <p>Browser storage mechanisms</p>
+          </div>
+        </a>
+
+        <a class="card" href="Skill8.html">
+          <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=300&q=80" alt="Frameworks" class="card-img">
+          <div class="card-content">
+            <i data-lucide="box"></i>
+            <h3>Development Frameworks</h3>
+            <p>React, Angular & Vue</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <button class="arrow right" id="nextBtn" type="button"><i data-lucide="chevron-right"></i></button>
+  </div>
+</section>
+
+<section class="final-test" id="finalTest">
+  <h2>Front-End Core Assessment</h2>
+  <p class="test-desc">Test your knowledge of HTML, CSS, and Client-Side JS. You have <strong>5 minutes</strong>.</p>
+  
+  <button id="startTestBtn" class="test-btn">Start Front-End Test</button>
+
+  <div id="testContainer" class="hidden" style="display:none;">
+    <div class="test-header">
+      <span id="timer">05:00</span>
+    </div>
+    <div id="questionsArea"></div>
+    <button id="submitTestBtn" class="test-btn">Submit Test</button>
+    <div id="testResult"></div>
+  </div>
+</section>
+
+<script src="Front-end development.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

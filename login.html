@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    /* Self-contained styles so the login can be copy/pasted easily */
+    .login-wrap {
+      max-width: 420px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+      border: 1px solid rgba(0, 51, 102, 0.2);
+    }
+
+    .login-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .login-header img { height: 56px; width: auto; }
+
+    .login-title {
+      margin: 0;
+      color: #003366;
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .login-sub {
+      margin: 6px 0 0;
+      color: #660000;
+      font-size: 0.95rem;
+    }
+
+    .login-field { margin-top: 14px; }
+    .login-field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #003366;
+    }
+
+    .login-field input {
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.2);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .login-field input:focus {
+      border-color: #003366;
+      box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.12);
+    }
+
+    .login-actions { margin-top: 18px; }
+
+    .login-actions button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: #003366;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .login-actions button:hover { background: #660000; }
+
+    .login-error {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(102, 0, 0, 0.08);
+      border: 1px solid rgba(102, 0, 0, 0.25);
+      color: #660000;
+      font-weight: 600;
+    }
+
+    .login-footer {
+      margin-top: 16px;
+      text-align: center;
+      color: #003366;
+    }
+
+    .login-footer a {
+      color: #003366;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .login-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav class="portal-nav">
+    <div class="logo-container">
+      <a href="index.html" aria-label="Back to portal">
+        <img src="logo PS.png" alt="University Logo" class="main-logo" />
+      </a>
+    </div>
+  </nav>
+
+  <main class="login-wrap">
+    <div class="login-header">
+      <img src="logo PS.png" alt="Logo" />
+      <div>
+        <h1 class="login-title">Portal Login</h1>
+        <p class="login-sub">Enter the preset username and password.</p>
+      </div>
+    </div>
+
+    <!-- Modular login form: copy/paste this form + auth.js into any project -->
+    <form id="loginForm" autocomplete="off">
+      <div class="login-field">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" required />
+      </div>
+
+      <div class="login-field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required />
+      </div>
+
+      <div class="login-actions">
+        <button type="submit">Login</button>
+      </div>
+
+      <div class="login-error" data-auth-error></div>
+    </form>
+
+    <div class="login-footer">
+      <a href="index.html">Return to portal</a>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>
+    // Optional: change preset credentials here (or inside auth.js DEFAULTS)
+    Auth.handleLoginForm('#loginForm', {
+      // presetUsername: 'admin',
+      // presetPassword: '1234',
+      defaultRedirect: 'index.html'
+    });
+  </script>
+</body>
+</html>

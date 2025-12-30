@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Test</title>
+  <link rel="stylesheet" href="Front-end development.css">
+</head>
+<body>
+
+<!-- LOGO -->
+<header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+    <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+  </div>
+</header>
+
+
+<br>
+<br>
+<br>
+
+<section class="final-test">
+
+  <h1>Final Assessment</h1>
+  <p class="desc">
+    This final test evaluates your understanding of all course sections.
+    You have <strong>5 minutes</strong> to complete it.
+  </p>
+
+  <button id="startTestBtn">Start Test</button>
+
+  <div id="testContainer" class="hidden">
+
+    <div class="test-header">
+      <span id="timer">05:00</span>
+    </div>
+
+    <div id="questionsArea"></div>
+
+    <button id="submitTestBtn">Submit Test</button>
+
+    <div id="testResult"></div>
+  </div>
+
+</section>
+
+<script src="test.js"></script>
+</body>
+</html>

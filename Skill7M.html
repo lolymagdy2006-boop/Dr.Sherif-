@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Security</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+    }
+
+    /* Big Logo Styling */
+    .logo-link img {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Centering the main content */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+      text-align: center;
+    }
+
+    .skill-page h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .skill-page p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .benefit-item {
+      background: #f0f4f8;
+      padding: 25px;
+      border-radius: 12px;
+      width: 180px;
+      transition: transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      background: #e2e8f0;
+    }
+
+    .benefit-item i {
+      color: #660000;
+      margin-bottom: 12px;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Info Section Styling */
+    .info-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: left;
+      border-left: 5px solid #003366;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Quick Check Box */
+    .quick-check {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      text-align: left;
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #003366;
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="index.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Security & Protection</h1>
+  <p>
+    Security is a fundamental requirement of modern web development. It protects user data and 
+    system integrity through robust authentication, data encryption, and active protection 
+    against common vulnerabilities like SQL Injection and Cross-Site Scripting (XSS).
+  </p>
+
+  
+
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <i data-lucide="lock"></i>
+      <p><strong>Encryption</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="key"></i>
+      <p><strong>Authentication</strong></p>
+    </div>
+    <div class="benefit-item">
+      <i data-lucide="eye-off"></i>
+      <p><strong>Privacy</strong></p>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3><i data-lucide="shield-check" style="margin-right: 10px;"></i> Secure Communication</h3>
+    <p>
+      Implementing SSL/TLS certificates (HTTPS) ensures that data transferred between the client and 
+      the server remains encrypted and cannot be intercepted by malicious actors. Combined with 
+      strong password hashing, these layers form a critical defense for any digital platform.
+    </p>
+
+    
+  </div>
+</main>
+
+<section class="quick-check">
+  <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+  <p><strong>Question:</strong> In a web server, what is the role of "Middleware"?</p>
+  <details>
+    <summary style="cursor: pointer; color: #660000; font-weight: bold; margin-top: 10px;">Click to reveal the answer</summary>
+    <div class="answer" style="padding-top: 15px; margin-top: 10px; border-top: 1px solid #eee;">
+      Middleware functions act as <strong>gatekeepers</strong> that run before the final request handler. They are used for tasks like logging, checking if a user is authenticated, or parsing incoming data to ensure it is safe before the server processes it.
+    </div>
+  </details>
+</section>
+
+<script>
+  lucide.createIcons();
+  
+  // Progress Logic
+  localStorage.setItem("skill7m_completed", "true");
+</script>
+</body>
+</html>

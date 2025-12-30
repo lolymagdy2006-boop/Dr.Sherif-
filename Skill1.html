@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asynchronous Requests</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .skill-header {
+      display: flex;
+      flex-direction: column; /* Stack logo above any other header content */
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0; /* More top padding for a "bigger" feel */
+      width: 100%;
+    }
+
+    /* Target the logo specifically */
+    .logo-link img {
+      width: 180px; /* Increased from 100px to 180px */
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); /* Soft shadow for depth */
+    }
+
+    .logo-link img:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    /* Centering the main title */
+    .skill-page h1 {
+      text-align: center;
+      font-size: 2.8rem; /* Made the title bigger to match the logo */
+      color: #003366;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* Ensuring the content looks clean below the large header */
+    .skill-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="skill-header">
+  <a href="Front-end development.html" class="logo-link">
+    <img src="short logo PS.png" alt="Major Logo">
+  </a>
+</header>
+
+<main class="skill-page">
+  <h1>Asynchronous Requests and Web Services</h1>
+
+  <div class="skill-visual-container">
+    <p style="font-size: 1.1rem; line-height: 1.8;">
+      Asynchronous requests allow a web page to communicate with a server
+      without reloading the entire page. This means users can continue
+      interacting with the website while data is being loaded in the background.
+    </p>
+    
+    
+    
+    <img src="OIP.webp" alt="Data Flow" class="skill-inline-img" style="display: block; margin: 30px auto; max-width: 100%; border-radius: 10px;">
+  </div>
+
+  <div class="info-section">
+     <h3><i data-lucide="info"></i> Why it is important</h3>
+     <p>Asynchronous communication improves performance, responsiveness, and overall user experience by preventing "page freezing" during data fetch operations.</p>
+  </div>
+
+  <h3><i data-lucide="code"></i> Practical Example</h3>
+  <div class="code-block">
+<pre><code>
+// Using the Modern Fetch API
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+</code></pre>
+  </div>
+
+  <section class="quick-check">
+    <h3><i data-lucide="help-circle"></i> Quick Check</h3>
+    <p><strong>Question:</strong> Why does the browser not "freeze" while a Fetch API request is waiting for a server response?</p>
+    <details>
+      <summary>Click to reveal the answer</summary>
+      <div class="answer" style="padding: 15px; background: #f0f4f8; border-radius: 8px; margin-top: 10px;">
+        Because Fetch is <strong>asynchronous</strong>. It sends the request to the Web API environment and continues executing the rest of the code. Once the data returns, a callback function handles the result without ever blocking the main UI thread.
+      </div>
+    </details>
+  </section>
+</main>
+
+<script>
+  lucide.createIcons();
+  // Mark as completed for the portal checkmarks
+  localStorage.setItem("section3_completed", "true");
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 4 – Discovering Server-Side Frameworks</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Centering and Sizing the Header */
+    .home-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 20px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo-container .logo {
+      width: 180px; 
+      height: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    .logo-container .logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hero Styling */
+    .s4-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .s4-hero h1 {
+      font-size: 2.8rem;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* Framework Grid */
+    .frameworks {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px auto;
+      flex-wrap: wrap;
+      max-width: 1000px;
+    }
+
+    .fw-card {
+      background: #f0f4f8;
+      padding: 25px;
+      border-radius: 12px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .fw-card:hover {
+      transform: translateY(-5px);
+      background: #e2e8f0;
+    }
+
+    .fw-card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    /* Why Box */
+    .why-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: left;
+      border-left: 5px solid #003366;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Architecture Section */
+    .architecture {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    /* MCQ Styling */
+    .mcq {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 5px solid #660000;
+      text-align: left;
+    }
+
+    .mcq label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .mcq button {
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<header class="home-header">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="logo PS.png" alt="University Logo" class="logo">
+    </a>
+  </div>
+</header>
+
+<section class="s4-hero">
+  <h1>Discovering Server-Side Frameworks</h1>
+  <p>
+    Server-side frameworks provide a structured foundation for building backend
+    applications efficiently, securely, and at scale.
+  </p>
+</section>
+
+
+
+<section class="frameworks">
+  <div class="fw-card">
+    <i data-lucide="layers" style="color:#003366; margin-bottom:10px;"></i>
+    <h3>Django</h3>
+    <p>Rapid development with strong built-in security features for Python.</p>
+  </div>
+
+  <div class="fw-card">
+    <i data-lucide="feather" style="color:#003366; margin-bottom:10px;"></i>
+    <h3>Laravel</h3>
+    <p>Elegant syntax and powerful tools for modern PHP applications.</p>
+  </div>
+
+  <div class="fw-card">
+    <i data-lucide="shield-check" style="color:#003366; margin-bottom:10px;"></i>
+    <h3>Spring</h3>
+    <p>Enterprise-level Java framework focused on scalability and robustness.</p>
+  </div>
+
+  <div class="fw-card">
+    <i data-lucide="terminal" style="color:#003366; margin-bottom:10px;"></i>
+    <h3>Express</h3>
+    <p>Minimal and flexible framework for Node.js (JavaScript) backends.</p>
+  </div>
+</section>
+
+<div class="why-box">
+  <h3><i data-lucide="help-circle" style="vertical-align: middle; margin-right: 8px;"></i> Why explore multiple frameworks?</h3>
+  <p>
+    Each framework is designed for different use cases. Understanding their
+    trade-offs helps developers choose the right tool for performance,
+    scalability, and long-term maintainability based on project needs.
+  </p>
+</div>
+
+<section class="architecture">
+  <h2>The MVC Architecture</h2>
+  <p>
+    Many server-side frameworks follow the <strong>Model-View-Controller (MVC)</strong> pattern. 
+    This separates the data (Model), the user interface (View), and the application logic (Controller).
+  </p>
+
+  
+
+  <p style="margin-top:20px;">
+    This separation of concerns allows developers to work on the UI without affecting the 
+    database logic, leading to cleaner code and easier teamwork.
+  </p>
+</section>
+
+<div class="mcq">
+  <p class="q"><strong>Question 1:</strong> What is the main purpose of a server-side framework?</p>
+  <label><input type="radio" name="q1" value="a"> Designing UI layouts</label>
+  <label><input type="radio" name="q1" value="b"> Providing structure and tools for backend development</label>
+  <label><input type="radio" name="q1" value="c"> Replacing the need for databases</label>
+  <button onclick="checkMCQ('q1','b','f1')">Check Answer</button>
+  <div class="feedback" id="f1"></div>
+</div>
+
+<div class="mcq">
+  <p class="q"><strong>Question 2:</strong> Why is MVC architecture important?</p>
+  <label><input type="radio" name="q2" value="a"> It mixes all responsibilities together for speed</label>
+  <label><input type="radio" name="q2" value="b"> It separates concerns and improves maintainability</label>
+  <label><input type="radio" name="q2" value="c"> It removes the need for frameworks entirely</label>
+  <button onclick="checkMCQ('q2','b','f2')">Check Answer</button>
+  <div class="feedback" id="f2"></div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  function checkMCQ(name, correct, feedbackId) {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const feedback = document.getElementById(feedbackId);
+    
+    if (!selected) {
+      feedback.textContent = "Please select an answer.";
+      feedback.style.color = "orange";
+      return;
+    }
+
+    if (selected.value === correct) {
+      feedback.textContent = "Correct! " + (feedbackId === 'f1' ? "Frameworks provide the 'blueprint' for backend apps." : "Separating logic from UI is a key professional practice.");
+      feedback.style.color = "green";
+    } else {
+      feedback.textContent = "Try again. Think about how frameworks provide a foundation.";
+      feedback.style.color = "red";
+    }
+  }
+
+  // Mark section as completed
+  localStorage.setItem("section4_completed", "true");
+</script>
+</body>
+</html>
