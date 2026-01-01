@@ -24,6 +24,7 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   align-items: center;
   padding: 0 20px;
+  justify-content: flex-end;
 }
 
 .dropdown {
@@ -50,6 +51,7 @@ body {
   box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
   z-index: 10000;
   border-radius: 0 0 8px 8px;
+  right: 0;
 }
 
 .dropdown-content a {
@@ -62,10 +64,6 @@ body {
 .dropdown-content a:hover {
   background-color: #f1f1f1;
   color: #660000;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 .dropdown:hover .dropbtn {
@@ -89,15 +87,11 @@ body {
 /* 4. Hero & Header */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 2px 1px;
+  background: linear-gradient(135deg, #003366, #1a008d);
   color: white;
-  border-radius: 0 0 50px 50px;
-  margin-bottom: 40px;
-}
-
-.hero h1 {
-  margin: 0;
-  font-size: 2.5rem;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 0;
 }
 
 /* 5. Path Cards & Grid */
@@ -150,12 +144,11 @@ body {
 
 /* 6. Carousel Section */
 .carousel-section {
-  padding: 40px 0;
+  padding: 10px 0;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 
 .carousel-title {
   text-align: center;
@@ -173,24 +166,18 @@ body {
 
 .carousel {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .carousel-track {
   display: flex;
   width: max-content;
+  animation-duration: 20s;
   animation: scroll 20s linear infinite;
 }
 
 .carousel-track:hover {
   animation-play-state: paused;
-}
-
-/* Add this to the existing CSS for better fit in carousel */
-.carousel-track .path-card {
-  flex: 0 0 auto;
-  width: 300px;
-  margin: 0 15px;
 }
 
 .card {
@@ -243,4 +230,11 @@ body {
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* Add this to the existing CSS for better fit in carousel */
+.carousel-track .path-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin: 0 15px;
 }
