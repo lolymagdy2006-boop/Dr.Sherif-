@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Sherif Rostom</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn" id="yearBtn">Select Year</button>
+      <div class="dropdown-content">
+        <a href="javascript:void(0)" onclick="selectYear('Year 1')">Year 1</a>
+        <a href="javascript:void(0)" onclick="selectYear('Year 2')">Year 2</a>
+        <a href="javascript:void(0)" onclick="selectYear('Year 3')">Year 3</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn" id="semBtn">Select Semester</button>
+      <div class="dropdown-content">
+        <a href="javascript:void(0)" onclick="selectSemester('Semester 1')">Semester 1</a>
+        <a href="javascript:void(0)" onclick="selectSemester('Semester 2')">Semester 2</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <img src="logo PS.png" alt="University Logo" class="main-logo">
+    <h1>Dr. Sherif Rostom</h1>
+    <p id="status-text" style="margin-top:15px; font-weight: 500; opacity: 0.8;">
+      Please select a Year and Semester from the menu above.
+    </p>
+  </header>
+
+  <!-- Main Carousel: All Syllabus -->
+  <section class="main-carousel-section carousel-section">
+    <h2 class="carousel-title">All Syllabus</h2>
+    <div class="carousel-wrapper">
+      <button class="arrow left"><i data-lucide="chevron-left"></i></button>
+      
+      <div class="carousel">
+        <div class="carousel-track">
+          <!-- Set 1 -->
+          <div class="path-card" data-year="Year 1" data-semester="Semester 1">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 1 - Semester 1</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 1 - Semester 2</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 2" data-semester="Semester 1">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 2 - Semester 1</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 2" data-semester="Semester 2">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 2 - Semester 2</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 3" data-semester="Semester 1">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 3 - Semester 1</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 3" data-semester="Semester 2">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 3 - Semester 2</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+      </div>
+
+      <button class="arrow right"><i data-lucide="chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Filtered Carousel: Selected Syllabus (hidden initially) -->
+  <section class="filtered-carousel-section carousel-section" style="display: none;">
+    <h2 class="carousel-title">Selected Syllabus</h2>
+    <div class="carousel-wrapper">
+      <button class="arrow left"><i data-lucide="chevron-left"></i></button>
+      
+      <div class="carousel">
+        <div class="carousel-track">
+          <!-- Set 1 -->
+          <div class="path-card" data-year="Year 1" data-semester="Semester 1">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 1 - Semester 1</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 1 - Semester 2</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 2" data-semester="Semester 1">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 2 - Semester 1</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 2" data-semester="Semester 2">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 2 - Semester 2</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 3" data-semester="Semester 1">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 3 - Semester 1</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="path-card" data-year="Year 3" data-semester="Semester 2">
+            <div class="card-icon"><i data-lucide="book-open"></i></div>
+            <h3>Year 3 - Semester 2</h3>
+            <p>Syllabus and course materials</p>
+            <a href="#" class="explore-link">Explore <i data-lucide="arrow-right"></i></a>
+          </div>
+      </div>
+
+      <button class="arrow right"><i data-lucide="chevron-right"></i></button>
+    </div>
+  </section>
+
+  <script src="Front-end development.js"></script>
+</body>
+</html>
