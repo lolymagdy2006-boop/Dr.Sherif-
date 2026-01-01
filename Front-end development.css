@@ -1,313 +1,246 @@
-/* 1. Global Styles & White Background */
+/* 1. Global Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #aecaf5; /* White background */
+  background: #aecaf5;
   min-height: 100vh;
-  color: #000000; /* Black text for readability */
+  color: #000;
   overflow-x: hidden;
 }
 
-/* 2. Header & Introduction */
-.home-header {
-  text-align: center;
-  padding: 80px 20px 40px;
+/* 2. Navbar & Dropdown Fixes */
+.navbar {
+  display: flex;
+  background-color: #003366;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  align-items: center;
+  padding: 0 20px;
 }
 
-.home-header h1 {
-  color: #003366; /* Dark blue */
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.intro {
-  max-width: 800px;
-  margin: 20px auto 0;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #660000; /* Dark red */
-  font-weight: 500;
-}
-
-/* 3. Carousel Section Layout */
-.carousel-section {
-  padding-bottom: 80px;
+.dropdown {
   position: relative;
+  display: inline-block;
 }
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  z-index: 10000;
+  border-radius: 0 0 8px 8px;
+}
+
+.dropdown-content a {
+  color: #003366;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #660000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #004d99;
+}
+
+/* 3. Logo Section */
+.portal-nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #aecaf5;
+}
+
+.main-logo {
+  height: 80px;
+  background-color: #fff; /* Fallback if image missing */
+  border-radius: 8px;
+}
+
+/* 4. Hero & Header */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  border-radius: 0 0 50px 50px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* 5. Path Cards & Grid */
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+}
+
+.path-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  color: #003366;
+}
+
+.path-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f0f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.explore-link {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: #660000;
+}
+
+/* 6. Carousel Section */
+.carousel-section {
+  padding: 40px 0;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 
 .carousel-title {
   text-align: center;
+  color: #003366;
   margin-bottom: 30px;
   font-size: 2rem;
-  font-weight: bold;
-  color: #003366; /* Dark blue */
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .carousel-wrapper {
   position: relative;
   width: 100%;
-}
-
-.carousel {
   overflow: hidden;
   padding: 20px 0;
 }
 
-/* 4. Carousel Track & Animation */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
 .carousel-track {
   display: flex;
   width: max-content;
+  animation: scroll 20s linear infinite;
 }
 
-.paused {
-  animation-play-state: paused !important;
+.carousel-track:hover {
+  animation-play-state: paused;
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Add this to the existing CSS for better fit in carousel */
+.carousel-track .path-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin: 0 15px;
 }
 
-/* 5. Home Page Cards */
 .card {
   flex: 0 0 auto;
   width: 300px;
   margin: 0 15px;
-  background: #ffffff; /* White */
-  border-radius: 20px;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
-}
-
-.card h3 {
-  margin: 0 0 10px 0;
-  color: #003366; /* Dark blue */
-  font-size: 1.3rem;
-}
-
-.card p {
-  margin: 0;
-  color: #660000; /* Dark red */
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* 6. Navigation Arrows */
-.arrow {
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-  background: #ffffff; 
-  border: 2px solid #003366; /* Dark blue border */
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  z-index: 20;
-  color: #003366; /* Dark blue */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, transform 0.2s;
-}
-
-.arrow:hover {
-  background: #003366; /* Dark blue */
-  color: #ffffff; /* White */
-  transform: translateY(-50%) scale(1.1);
-}
-
-.arrow.left { left: 20px; }
-.arrow.right { right: 20px; }
-
-/* 7. Skill Page Specific Visuals */
-.skill-page {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
-  color: #003366; /* Dark blue */
-}
-
-.dark-bg-text {
-  color: #660000 !important; /* Dark red */
-}
-
-.code-block {
-  background: #003366; /* Dark blue */
-  padding: 20px;
-  border-radius: 12px;
-  overflow-x: auto;
-  color: #ffffff; /* White */
-  border: 1px solid #660000; /* Dark red */
-  font-family: 'Consolas', monospace;
-  margin: 20px 0;
-}
-
-/* ================= FINAL TEST ================= */
-.hidden { display: none !important; }
-
-.final-test {
-  width: 90%;
-  max-width: 800px;
-  margin: 80px auto;
-  padding: 40px;
-  border-radius: 25px;
-  background: #ffffff; /* White */
-  border: 1px solid #003366; /* Dark blue */
-  text-align: center;
-  color: #003366; /* Dark blue */
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-
-.test-btn {
-  background: linear-gradient(135deg, #660000, #003366); /* Red to blue gradient */
-  color: white;
-  border: none;
-  padding: 14px 35px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.test-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Styling for the radio buttons to look like cards */
-.option-card {
-  display: flex;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 12px 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.option-card:hover {
-  background: rgba(0, 51, 102, 0.1); /* Light blue */
-  border-color: #003366; /* Dark blue */
-}
-
-.option-card input[type="radio"] {
-  margin-right: 15px;
-  accent-color: #660000; /* Dark red */
-  transform: scale(1.2);
-}
-
-.test-q {
-  margin-top: 20px;
-  text-align: left;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: 20px;
-}
-
-.result-q.correct { background: rgba(0, 102, 0, 0.1); border: 1px solid #006600; }
-.result-q.wrong { background: rgba(255, 0, 0, 0.1); border: 1px solid #ff0000; }
-
-/* Quick Check Component Styles */
-.quick-check {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 25px;
-    border-radius: 15px;
-    border-left: 5px solid #003366; /* Dark blue */
-    margin: 40px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.quick-check h3 {
-    margin-top: 0;
-    color: #003366; /* Dark blue */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.quick-check summary {
-    font-weight: bold;
-    color: #660000; /* Dark red */
-    cursor: pointer;
-    padding: 10px 0;
-    outline: none;
-    transition: color 0.3s ease;
-}
-
-.quick-check summary:hover {
-    color: #003366; /* Dark blue */
-}
-
-.quick-check .answer {
-    padding-top: 15px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    line-height: 1.6;
-    color: #660000; /* Dark red */
-}
-
-/* Hero Section Styles */
-.hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #003366, #660000);
-  color: white;
-  border-radius: 0 0 50px 50px;
-  margin-bottom: 50px;
-}
-
-.hero-icon {
-  font-size: 4rem;
-  margin-bottom: 20px;
-}
-
-.hero-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 30px;
   background: white;
-  color: #003366;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: bold;
-  transition: 0.3s;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.hero-btn:hover {
-  background: #aecaf5;
-  transform: scale(1.05);
-}
-
-/* Card Image & Content Fixes */
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
 }
 
 .card-content {
   padding: 20px;
-  text-align: left;
 }
 
-.check {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #28a745 !important; /* Green for completion */
-  margin-top: 10px;
-  display: block;
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  background: white;
+  border: 2px solid #003366;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 20;
+  color: #003366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.arrow:hover {
+  background: #003366;
+  color: white;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
