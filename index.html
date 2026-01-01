@@ -6,10 +6,17 @@
   <title>Dr. Sherif Rostom</title>
   <link rel="stylesheet" href="Front-end development.css">
    <script src="auth.js"></script>
-  <script>
-    // Protect this page
-    Auth.requireAuth({ loginPage: 'login.html' });
-  </script>
+ <script src="auth.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // This ensures the Auth object is fully loaded before calling it
+    if (typeof Auth !== 'undefined') {
+      Auth.requireAuth({ loginPage: 'login.html' });
+    } else {
+      console.error("Auth object not found. Check if auth.js is loaded correctly.");
+    }
+  });
+</script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -362,4 +369,5 @@
   <script src="Front-end development.js"></script>
 </body>
 </html>
+
 
