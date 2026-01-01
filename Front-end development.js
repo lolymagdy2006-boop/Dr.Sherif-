@@ -11,10 +11,14 @@ function selectYear(year) {
     // Update the Button UI
     const yearBtn = document.getElementById('yearBtn');
     if (yearBtn) {
-        yearBtn.innerText = "Year: " + year.split(' ')[1];
-        yearBtn.style.backgroundColor = "#660000";
-        yearBtn.style.boxShadow = "inset 0 0 10px rgba(0,0,0,0.5)";
+        yearBtn.innerText = year ? "Year: " + year.split(' ')[1] : "Select Year";
+        yearBtn.style.backgroundColor = year ? "#660000" : "transparent";
+        yearBtn.style.boxShadow = year ? "inset 0 0 10px rgba(0,0,0,0.5)" : "none";
     }
+
+    // Close dropdown
+    const yearContent = document.querySelector('#yearBtn + .dropdown-content');
+    if (yearContent) yearContent.style.display = 'none';
     
     filterCards();
     toggleCarousels();
@@ -30,10 +34,14 @@ function selectSemester(semester) {
     // Update the Button UI
     const semBtn = document.getElementById('semBtn');
     if (semBtn) {
-        semBtn.innerText = "Sem: " + semester.split(' ')[1];
-        semBtn.style.backgroundColor = "#660000";
-        semBtn.style.boxShadow = "inset 0 0 10px rgba(0,0,0,0.5)";
+        semBtn.innerText = semester ? "Sem: " + semester.split(' ')[1] : "Select Semester";
+        semBtn.style.backgroundColor = semester ? "#660000" : "transparent";
+        semBtn.style.boxShadow = semester ? "inset 0 0 10px rgba(0,0,0,0.5)" : "none";
     }
+
+    // Close dropdown
+    const semContent = document.querySelector('#semBtn + .dropdown-content');
+    if (semContent) semContent.style.display = 'none';
     
     filterCards();
     toggleCarousels();
@@ -58,6 +66,39 @@ function toggleCarousels() {
 }
 
 /**
+ * Duplicates visible cards for infinite loop
+ */
+function duplicateForLoop(sectionSelector) {
+    const track = document.querySelector(sectionSelector + ' .carousel-track');
+    if (!track) return;
+
+    // Remove existing clones
+    track.querySelectorAll('.clone').forEach(clone => clone.remove());
+
+    const cards = track.querySelectorAll('.path-card');
+    const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+
+    const visibleCount = visibleCards.length;
+
+    if (visibleCount < 4) {
+        track.style.animation = 'none';
+        return;
+    }
+
+    // Duplicate visible cards
+    visibleCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add('clone');
+        track.appendChild(clone);
+    });
+
+    // Set duration based on visible count
+    const duration = visibleCount * 3.33;
+    track.style.animationDuration = `${duration}s`;
+    track.style.animation = `scroll ${duration}s linear infinite`;
+}
+
+/**
  * Filters the syllabus cards based on current selections (only in filtered carousel)
  */
 function filterCards() {
@@ -70,12 +111,10 @@ function filterCards() {
         const matchesYear = !chosenYear || cardYear === chosenYear;
         const matchesSem = !chosenSemester || cardSem === chosenSemester;
         
-        if (matchesYear && matchesSem) {
-            card.style.display = 'flex';
-        } else {
-            card.style.display = 'none';
-        }
+        card.style.display = (matchesYear && matchesSem) ? 'flex' : 'none';
     });
+
+    duplicateForLoop('.filtered-carousel-section');
 }
 
 /**
@@ -109,41 +148,63 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
+    // Duplicate for main carousel
+    duplicateForLoop('.main-carousel-section');
+
     // Initial setup
     toggleCarousels();
     filterCards();
 
-    // Carousel arrow click pause and manual scroll
-    const leftBtns = document.querySelectorAll('.arrow.left');
-    const rightBtns = document.querySelectorAll('.arrow.right');
+    // Dropdown click toggle
+    const yearBtn = document.getElementById('yearBtn');
+    const semBtn = document.getElementById('semBtn');
 
-    leftBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const section = btn.closest('.carousel-section');
-            const carousel = section.querySelector('.carousel');
-            const track = section.querySelector('.carousel-track');
-            carousel.scrollBy({ left: -330, behavior: 'smooth' });
-            track.style.animationPlayState = 'paused';
-        });
+    yearBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const content = yearBtn.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
     });
 
-    rightBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const section = btn.closest('.carousel-section');
+    semBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const content = semBtn.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+        const yearDropdown = yearBtn.parentElement;
+        const semDropdown = semBtn.parentElement;
+
+        if (!yearDropdown.contains(event.target)) {
+            yearDropdown.querySelector('.dropdown-content').style.display = 'none';
+        }
+        if (!semDropdown.contains(event.target)) {
+            semDropdown.querySelector('.dropdown-content').style.display = 'none';
+        }
+    });
+
+    // Carousel arrow click manual scroll and pause
+    const arrows = document.querySelectorAll('.arrow');
+    arrows.forEach(arrow => {
+        arrow.addEventListener('click', () => {
+            const section = arrow.closest('.carousel-section');
             const carousel = section.querySelector('.carousel');
             const track = section.querySelector('.carousel-track');
-            carousel.scrollBy({ left: 330, behavior: 'smooth' });
+            const direction = arrow.classList.contains('left') ? -330 : 330;
+            carousel.scrollBy({ left: direction, behavior: 'smooth' });
             track.style.animationPlayState = 'paused';
         });
     });
 
     // Pause on hover for all tracks
-    const tracks = document.querySelectorAll('.carousel-track');
-    tracks.forEach(track => {
-        track.parentElement.addEventListener('mouseenter', () => {
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        carousel.addEventListener('mouseenter', () => {
             track.style.animationPlayState = 'paused';
         });
-        track.parentElement.addEventListener('mouseleave', () => {
+        carousel.addEventListener('mouseleave', () => {
             track.style.animationPlayState = 'running';
         });
     });
