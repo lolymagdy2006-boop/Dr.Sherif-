@@ -1,145 +1,143 @@
 /* 1. Global Styles & Deep Purple Gradient */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Fixed: Changed gradient to ensure the dark section is at the bottom of the page content, not just the viewport */
-  background: linear-gradient(180deg, #f3e7ff 0%, #a89cc8 45%, #2e1a47 100%);
-  background-attachment: fixed;
-  min-height: 100vh;
-  color: #1a0f2e; 
-  overflow-x: hidden; /* Prevents horizontal scroll from carousel animation */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #aecaf5;
+    min-height: 100vh;
+    color: #000;
+    overflow-x: hidden; /* Prevents horizontal scroll from carousel animation */
 }
 
 /* 2. Header & Introduction */
 .home-header {
-  text-align: center;
-  padding: 80px 20px 40px;
+    text-align: center;
+    padding: 80px 20px 40px;
 }
 
 .home-header h1 {
-  color: #3b2d61;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+    color: #003366;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .intro {
-  max-width: 800px;
-  margin: 20px auto 0;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #4a3f75;
-  font-weight: 500;
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #003366;
+    font-weight: 500;
 }
 
 /* 3. Carousel Section Layout */
 .carousel-section {
-  padding-bottom: 80px;
-  position: relative;
+    padding-bottom: 80px;
+    position: relative;
 }
 
 .carousel-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffffff; 
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366;
 }
 
 .carousel-wrapper {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .carousel {
-  overflow: hidden;
-  padding: 20px 0; /* Adjusted padding */
+    overflow: hidden;
+    padding: 20px 0; /* Adjusted padding */
 }
 
 /* 4. Carousel Track & Animation */
 .carousel-track {
-  display: flex;
-  width: max-content; /* Critical: allows the track to extend as far as needed */
+    display: flex;
+    width: max-content; /* Critical: allows the track to extend as far as needed */
 }
 
 /* Add this class to your JS to stop animation when user interacts */
 .paused {
-  animation-play-state: paused !important;
+    animation-play-state: paused !important;
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Standard infinite scroll logic */
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Standard infinite scroll logic */
 }
 
 /* 5. Home Page Cards */
 .card {
-  flex: 0 0 auto;
-  width: 300px;
-  margin: 0 15px;
-  background: #ffffff;
-  border-radius: 20px;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto;
+    width: 300px;
+    margin: 0 15px;
+    background: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
 }
 
 .card-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .card-content {
-  padding: 20px;
+    padding: 20px;
 }
 
 .card h3 {
-  margin: 0 0 10px 0;
-  color: #2e1a47;
-  font-size: 1.3rem;
+    margin: 0 0 10px 0;
+    color: #003366;
+    font-size: 1.3rem;
 }
 
 .card p {
-  margin: 0;
-  color: #5a4d8c;
-  font-size: 0.95rem;
-  line-height: 1.4;
+    margin: 0;
+    color: #003366;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 /* 6. Navigation Arrows */
 .arrow {
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-  background: #ffffff; 
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  z-index: 20;
-  color: #2e1a47;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, transform 0.2s;
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background: #ffffff; 
+    border: 2px solid #003366;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 20;
+    color: #003366;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
 }
 
 .arrow:hover {
-  background: #f3e7ff;
-  transform: translateY(-50%) scale(1.1);
+    background: #003366;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
 }
 
 .arrow.left { left: 20px; }
@@ -147,84 +145,83 @@ body {
 
 /* 7. Skill Page Specific Visuals */
 .skill-page {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
-  /* Fix: Ensure text is readable on dark bottom gradient if skill page is long */
-  color: #2e1a47; 
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+    color: #003366; 
 }
 
 /* If a skill section is inside the dark area, use this class */
 .dark-bg-text {
-  color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 .code-block {
-  background: #1a0f29;
-  padding: 20px;
-  border-radius: 12px;
-  overflow-x: auto;
-  color: #eaddff;
-  border: 1px solid #483d6b;
-  font-family: 'Consolas', monospace;
-  margin: 20px 0;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+    color: #003366;
+    border: 1px solid #003366;
+    font-family: 'Consolas', monospace;
+    margin: 20px 0;
 }
 
 /* ================= FINAL TEST ================= */
 .hidden { display: none !important; }
 
 .final-test {
-  width: 90%;
-  max-width: 800px;
-  margin: 80px auto;
-  padding: 40px;
-  border-radius: 25px;
-  background: #1a1625; 
-  border: 1px solid #4a3f75;
-  text-align: center;
-  color: white;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 90%;
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 25px;
+    background: #003366; 
+    border: 1px solid #003366;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
 .test-btn {
-  background: linear-gradient(135deg, #7c3aed, #4f46e5);
-  color: white;
-  border: none;
-  padding: 14px 35px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+    background: linear-gradient(135deg, #003366, #004d99);
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .test-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .option-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-  text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: left;
 }
 
 .option-card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #7c3aed;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #003366;
 }
 
 /* Result styles */
 .result-q {
-  text-align: left;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 15px;
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 .result-q.correct { background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; }
 .result-q.wrong { background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; }
