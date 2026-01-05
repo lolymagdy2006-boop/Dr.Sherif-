@@ -18,6 +18,7 @@ body {
     color: #003366;
     font-size: 2.5rem;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .intro {
@@ -56,7 +57,15 @@ body {
 /* 4. Carousel Track & Animation */
 .carousel-track {
     display: flex;
-    width: max-content; /* Critical: allows the track to extend as far as needed */
+    width: max-content; 
+    
+    /* ADD THIS: */
+    animation: scroll 20s linear infinite;
+}
+
+/* Optional: Pause on hover for better UX */
+.carousel-track:hover {
+    animation-play-state: paused;
 }
 
 /* Add this class to your JS to stop animation when user interacts */
@@ -225,3 +234,4 @@ body {
 }
 .result-q.correct { background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; }
 .result-q.wrong { background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; }
+
