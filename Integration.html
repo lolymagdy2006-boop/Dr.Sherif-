@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration Course - Main Page</title>
+  <link rel="stylesheet" href="Front end .css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+    <img src="logo PS.png" alt="University Logo" class="logo" style="width: 70px; height: auto;">
+  </div>
+
+  <h1>Integration Lectures</h1>
+
+  <p class="intro">
+    This platform hosts the core integration lectures covering advanced CSS layouts, 
+    interactive web elements, and modern programming paradigms. Explore each module 
+    to master the technical skills required for professional web development.
+  </p>
+</header>
+
+<section class="carousel-section">
+  <h2 class="carousel-title">Explore the Syllabus</h2>
+
+  <div class="carousel-wrapper">
+    <button class="arrow left" id="prevBtn" type="button"><i data-lucide="chevron-left"></i></button>
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        
+        <a class="card" href="dr sherif.html">
+          <img src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?auto=format&fit=crop&w=300&q=80" alt="HTML Div Structure" class="card-img">
+          <div class="card-content">
+            <i data-lucide="layout"></i>
+            <h3>The Div Tag</h3>
+            <p>CSS Art & Flag Layouts</p>
+          </div>
+        </a>
+        
+        <a class="card" href="dr sherif week 2 intg.html">
+          <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=300&q=80" alt="CSS Layout Positioning" class="card-img">
+          <div class="card-content">
+            <i data-lucide="move"></i>
+            <h3>CSS Positioning</h3>
+            <p>Relative vs. Absolute</p>
+          </div>
+        </a>
+        
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=300&q=80" alt="UI Dropdown Menu" class="card-img">
+          <div class="card-content">
+            <i data-lucide="chevron-down-square"></i>
+            <h3>Dropdown Menus</h3>
+            <p>Select & Hover States</p>
+          </div>
+        </a>
+        
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=300&q=80" alt="Event Loop Diagram" class="card-img">
+          <div class="card-content">
+            <i data-lucide="zap"></i>
+            <h3>Event Driven Logic</h3>
+            <p>Event Loops & Handlers</p>
+          </div>
+        </a>
+
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" alt="Python Code" class="card-img">
+          <div class="card-content">
+            <i data-lucide="terminal"></i>
+            <h3>Python Asyncio</h3>
+            <p>Coroutines & Tasks</p>
+          </div>
+        </a>
+
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=300&q=80" alt="Flexible Layout" class="card-img">
+          <div class="card-content">
+            <i data-lucide="accessibility"></i>
+            <h3>WCAG Accessibility</h3>
+            <p>Inclusive Web Design</p>
+          </div>
+        </a>
+
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" alt="Animation Keyframes" class="card-img">
+          <div class="card-content">
+            <i data-lucide="clapperboard"></i>
+            <h3>CSS Animations</h3>
+            <p>Keyframes & Transitions</p>
+          </div>
+        </a>
+
+
+      </div>
+    </div>
+
+    <button class="arrow right" id="nextBtn" type="button"><i data-lucide="chevron-right"></i></button>
+  </div>
+</section>
+
+<section class="final-test" id="finalTest">
+  <h2>Integration Core Assessment</h2>
+  <p class="test-desc">Validate your knowledge of CSS Layouts, Accessibility, and Python EDP. You have <strong>5 minutes</strong>.</p>
+  
+  <button id="startTestBtn" class="test-btn">Start Integration Test</button>
+
+  <div id="testContainer" class="hidden" style="display:none;">
+    <div class="test-header">
+      <span id="timer">05:00</span>
+    </div>
+    <div id="questionsArea"></div>
+    <button id="submitTestBtn" class="test-btn">Submit Test</button>
+    <div id="testResult"></div>
+  </div>
+</section>
+
+<script src="Front end .js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
