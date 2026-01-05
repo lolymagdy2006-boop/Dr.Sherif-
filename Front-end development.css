@@ -7,24 +7,30 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* CHANGED: From dark radial to Light Blue */
   background: #aecaf5;
   min-height: 100vh;
-  color: #000;
+  /* CHANGED: From light gray to Dark Navy */
+  color: #003366;
   overflow-x: hidden;
 }
 
-/* 2. Navbar & Dropdown Fixes */
+/* 2. Navbar & Dropdown */
 .navbar {
   display: flex;
-  background-color: #003366;
+  /* CHANGED: From dark translucent to White translucent */
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(10px);
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 9999;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   align-items: center;
   padding: 0 20px;
   justify-content: flex-end;
+  /* CHANGED: Border color to faint navy */
+  border-bottom: 1px solid rgba(0, 51, 102, 0.1);
 }
 
 .dropdown {
@@ -34,7 +40,8 @@ body {
 
 .dropbtn {
   background-color: transparent;
-  color: white;
+  /* CHANGED: From light blue to Dark Navy */
+  color: #003366;
   padding: 16px 24px;
   font-size: 16px;
   font-weight: 600;
@@ -43,18 +50,25 @@ body {
   transition: 0.3s;
 }
 
+.dropbtn:hover {
+  color: #004d99; /* Slightly lighter navy on hover */
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
+  /* CHANGED: From dark transparent to White */
   background-color: #ffffff;
   min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
   z-index: 10000;
   border-radius: 0 0 8px 8px;
   right: 0;
+  border: 1px solid rgba(0, 51, 102, 0.1);
 }
 
 .dropdown-content a {
+  /* CHANGED: Text color to Dark Navy */
   color: #003366;
   padding: 12px 16px;
   text-decoration: none;
@@ -62,12 +76,11 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color: #660000;
+  background-color: #f0f4f8; /* Light grey/blue hover effect */
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #004d99;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* 3. Logo Section */
@@ -75,76 +88,33 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #aecaf5;
+  /* CHANGED: Match body background */
+  background: #aecaf5;
 }
 
 .main-logo {
   height: 80px;
-  background-color: #fff; /* Fallback if image missing */
+  /* CHANGED: White background to frame logo */
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
+  padding: 5px; /* Added padding so logo doesn't touch edges */
 }
 
 /* 4. Hero & Header */
 .hero {
   text-align: center;
-  padding: 2px 1px;
-  background: linear-gradient(135deg, #003366, #1a008d);
-  color: white;
+  padding: 20px 10px;
+  /* CHANGED: To Dark Navy Gradient */
+  background: linear-gradient(135deg, #003366, #004d99);
+  color: white; /* Text stays white on dark hero bg */
   border-radius: 0 0 5px 5px;
-  margin-bottom: 0;
-}
-
-/* 5. Path Cards & Grid */
-.path-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto 60px auto;
-  padding: 0 20px;
-}
-
-.path-card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.3s;
-  color: #003366;
-}
-
-.path-card:hover {
-  transform: translateY(-10px);
-}
-
-.card-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #f0f4f8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
-  color: #003366;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.explore-link {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 600;
-  color: #660000;
-}
-
-/* 6. Carousel Section */
+/* 5. Carousel Section */
 .carousel-section {
-  padding: 10px 0;
+  padding: 6px 0;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
@@ -152,89 +122,144 @@ body {
 
 .carousel-title {
   text-align: center;
+  /* CHANGED: Title color to Dark Navy */
   color: #003366;
-  margin-bottom: 30px;
-  font-size: 2rem;
+  margin-bottom: 4px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .carousel-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 20px 0;
-}
-
-.carousel {
-  width: 100%;
-  overflow-x: hidden;
+  padding: 8px 0;
 }
 
 .carousel-track {
   display: flex;
   width: max-content;
-  animation-duration: 20s;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .carousel-track:hover {
   animation-play-state: paused;
 }
 
+/* Even Smaller Generic Card Style */
 .card {
   flex: 0 0 auto;
-  width: 300px;
-  margin: 0 15px;
-  background: white;
-  border-radius: 20px;
+  width: 120px;
+  /* CHANGED: Card background to White */
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 0 6px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  /* CHANGED: Shadow style */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 50px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 20px;
+  padding: 6px;
+  font-size: 0.6rem;
+  /* CHANGED: Text color to Dark Navy */
+  color: #003366;
+  text-align: center;
+}
+
+/* Even Smaller Path Card Style inside Carousel */
+.carousel-track .path-card {
+  flex: 0 0 auto;
+  width: 150px;
+  padding: 8px;
+  margin: 0 6px;
+  /* CHANGED: Background to White */
+  background: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* CHANGED: Text color */
+  color: #003366;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 51, 102, 0.1);
+}
+
+.carousel-track .path-card .card-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  /* CHANGED: Icon background to light blue */
+  background: #aecaf5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  color: #003366;
+}
+
+.carousel-track .path-card h3 {
+  font-size: 0.8rem;
+  margin: 4px 0;
+  text-align: center;
+  /* CHANGED: Heading color */
+  color: #003366;
 }
 
 /* Arrows */
 .arrow {
   position: absolute;
-  top: 55%;
+  top: 50%;
   transform: translateY(-50%);
-  background: white;
+  /* CHANGED: Arrow styling to match target (White bg, Navy Border) */
+  background: #ffffff;
   border: 2px solid #003366;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   z-index: 20;
+  /* CHANGED: Arrow icon color */
   color: #003366;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
 }
 
 .arrow:hover {
   background: #003366;
-  color: white;
+  color: #ffffff;
 }
 
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Add this to the existing CSS for better fit in carousel */
-.carousel-track .path-card {
-  flex: 0 0 auto;
-  width: 300px;
-  margin: 0 15px;
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
