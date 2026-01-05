@@ -1,0 +1,148 @@
+/* ==========================================================================
+   1. Global Styles & Theme
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #aecaf5; /* Main Light Blue */
+    min-height: 100vh;
+    color: #003366; /* Dark Navy Text */
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Header & Footer
+   ========================================================================== */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #003366, #004d99);
+    color: white;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.2);
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    background: #003366;
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   3. Content Container & Sections
+   ========================================================================== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.4); /* Subtle white glass effect */
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+h3 {
+    color: #003366;
+    font-size: 1.8rem;
+    border-left: 5px solid #003366;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   4. Tables (New Addition)
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden; /* Ensures corners stay rounded */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+thead {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #aecaf5;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f0f4f8; /* Soft hover highlight */
+}
+
+/* ==========================================================================
+   5. Code Blocks
+   ========================================================================== */
+.code-block {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    overflow-x: auto;
+    color: #003366;
+    border: 1px solid rgba(0, 51, 102, 0.2);
+    font-family: 'Consolas', 'Monaco', monospace;
+    margin: 20px 0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    line-height: 1.5;
+}
+
+/* Style for the code labels/comments */
+.code-block b {
+    color: #004d99;
+}
+
+/* ==========================================================================
+   6. Lists & UI Elements
+   ========================================================================== */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Custom bullet points */
+ul li::marker {
+    color: #003366;
+    font-weight: bold;
+}

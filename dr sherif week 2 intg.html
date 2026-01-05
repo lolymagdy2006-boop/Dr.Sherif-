@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration - CSS Advanced Layout: Positioning</title>
+    <link rel="stylesheet" href="Jano.css">
+</head>
+<body>
+
+    <header>
+        <h1>Integration</h1>
+        <h2>CSS LANGUAGE: ADVANCED LAYOUT - POSITIONING</h2>
+    </header>
+
+    <div class="container">
+        <section>
+            <h3>Introduction to Positioning</h3>
+            <p>CSS positioning defines how elements are placed within a web page. It allows you to control the layout, stacking order, and alignment of elements.</p>
+            
+            <p>The primary positioning types in CSS are: static, relative, absolute, fixed, and sticky.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Static</strong></td>
+                        <td>Default positioning method. Elements are positioned according to the normal flow of the document.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Relative</strong></td>
+                        <td>Elements are positioned relative to their normal position in the document flow. Other elements will not fill the gap left by this element when adjusted.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Absolute</strong></td>
+                        <td>Positioned concerning its nearest non-static ancestor. Elements are taken out of the normal document flow.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fixed</strong></td>
+                        <td>An element remains in the same position relative to the viewport even when the page is scrolled.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sticky</strong></td>
+                        <td>Combines features of relative and fixed. The element is treated as relative until it reaches a specified threshold, then it becomes fixed.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>1. Static Positioning</h3>
+            <p>Static is the default position of an element. It does not accept properties like top, left, right, or bottom.</p>
+            
+            
+            
+            <ul>
+                <li>The boxes follow the normal flow of the document.</li>
+                <li>There's no overlap or displacement of elements.</li>
+            </ul>
+
+            <div class="code-block">
+                div {<br>
+                &nbsp;&nbsp;position: static;<br>
+                &nbsp;&nbsp;border: 1px solid black;<br>
+                &nbsp;&nbsp;padding: 10px;<br>
+                &nbsp;&nbsp;margin: 10px;<br>
+                }
+            </div>
+        </section>
+
+        <section>
+            <h3>2. Relative Positioning</h3>
+            <p>Relative positioning places an element relative to its normal position. You can move it using top, left, right, or bottom.</p>
+            
+            
+
+            <div class="code-block">
+                .relative {<br>
+                &nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;top: 20px;<br>
+                &nbsp;&nbsp;left: 30px;<br>
+                }
+            </div>
+            <p>Box 2 is shifted 20px down and 30px to the right from its normal position.</p>
+        </section>
+
+        <section>
+            <h3>Example: External CSS Positioning</h3>
+            <div class="code-block">
+                /* Targets specific elements by ID */<br>
+                #one {<br>
+                &nbsp;&nbsp;position: static;<br>
+                &nbsp;&nbsp;background-color: BLUE;<br>
+                }<br><br>
+                #three {<br>
+                &nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;top: 50px;<br>
+                &nbsp;&nbsp;left: 60px;<br>
+                &nbsp;&nbsp;background: blue;<br>
+                }
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        Integration 2-6 to 2-10 | CSS ADVANCED LAYOUT
+    </footer>
+
+</body>
+</html>

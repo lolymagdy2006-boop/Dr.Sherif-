@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration - PRE-REQUISITE: DIV TAG</title>
+    <link rel="stylesheet" href="Jano.css">
+</head>
+<body>
+
+
+    <header>
+        <h1>Integration</h1>
+        <h2>PRE-REQUISITE: DIV TAG</h2>
+    </header>
+
+    <div class="container">
+        <section>
+            <h3>What is a Div Tag?</h3>
+            <p>The HTML division tag, called "div" for short, is a special element that lets you group similar sets of content together on a web page. You can use it as a generic container for associating similar content.</p>
+            <p>The div tag is one of the most used tags and doesn't seem to be going anywhere despite the introduction of semantic elements.</p>
+        </section>
+
+        <section>
+            <h3>1. Use div in Web Layouts</h3>
+            <p>You'll primarily use the div tag to group similar content together so you can style it easily. A great example of this is using div to group different sections of a webpage together.</p>
+            <p>You can put together the header, nav, sections, and footer of a page in an individual div tag so they can be styled together. Div itself does not have a direct effect on the presentation of the content unless you style it.</p>
+            
+        </section>
+
+        <section>
+            <h3>2. Use div in CSS Art</h3>
+            <p>With the div tag, you can make various shapes and draw anything because it is easy to style.</p>
+            
+            <h4>How to make a square with the div tag</h4>
+            <p>To make a square with div tag, you first need to define an empty div tag and attach a class attribute to it in the HTML. In the CSS, select the div with the class attribute, then set an equal height and width for it.</p>
+            <div class="code-block">
+                .square {<br>
+                &nbsp;&nbsp;background-color: #6600CC;<br>
+                &nbsp;&nbsp;width: 200px;<br>
+                &nbsp;&nbsp;height: 200px;<br>
+                }
+            </div>
+            <div class="art-demo">
+                <div class="square"></div>
+            </div>
+
+            <h4>How to make a circle with the div tag</h4>
+            <p>To make a circle, you define the dimensions and add the border-radius property set to 50%.</p>
+            <div class="code-block">
+                .circle {<br>
+                &nbsp;&nbsp;background-color: #2ecc71;<br>
+                &nbsp;&nbsp;width: 200px;<br>
+                &nbsp;&nbsp;height: 200px;<br>
+                &nbsp;&nbsp;border-radius: 50%;<br>
+                }
+            </div>
+            <div class="art-demo">
+                <div class="circle"></div>
+            </div>
+        </section>
+
+        <section>
+            <h3>3. Making the Egyptian flag with the div tag</h3>
+            <p>The flag is a rectangular shape with the colors red, white, and black. To make it, define 3 div tags and attach different classes, then style them appropriately in the CSS.</p>
+            <div class="art-demo">
+                <div class="egypt-flag">
+                    <div class="first-red"></div>
+                    <div class="white-stripe"></div>
+                    <div class="second-black"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        Integration 2-1 to 2-5 | PRE-REQUEST: DIV TAG
+    </footer>
+
+</body>
+</html>
