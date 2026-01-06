@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Advanced Layout - Positioning Transcription</title>
+    <style>
+        :root {
+            --primary-blue: #004a99;
+            --code-blue: #0000ff;
+            --code-red: #800000;
+            --code-green: #008000;
+            --bg-white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-white);
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .doc-container {
+            max-width: 900px;
+            margin: auto;
+            border: 2px solid var(--primary-blue);
+            padding: 30px;
+        }
+
+        .header-meta {
+            text-align: right;
+            font-size: 0.9em;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--primary-blue);
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .code-window {
+            background-color: #f0f7ff;
+            border-left: 4px solid var(--primary-blue);
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .blue { color: var(--code-blue); }
+        .red { color: var(--code-red); }
+        .green { color: var(--code-green); }
+
+        .system-text {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .diagram-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .diagram-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="doc-container">
+    <div class="header-meta">
+        Tel: 01501827070 - 01017776756<br>
+        E-mail: sherrost@yahoo.com
+    </div>
+
+    <h1>Positioning</h1>
+
+  <div class="diagram-container">
+        
+    </div>
+
+  <h2>Integration</h2>
+    <h3>CSS LANGUAGE: ADVANCED LAYOUT</h3>
+
+  <div class="diagram-container">
+        
+    </div>
+
+  <p>CSS positioning defines how elements are placed within a web page. It allows you to control the layout, stacking order, and alignment of elements.</p>
+    
+    <p>The primary positioning types in CSS are: static, relative, absolute, fixed, sticky. Integration 2-6 what's the difference?</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Position Property</th>
+              <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fixed</td>
+              <td>An element with position: fixed property remains in the same position relative to the viewport even when the page is scrolled.</td>
+            </tr>
+            <tr>
+              <td>Static</td>
+                <td>Default positioning method. Elements with position: static are positioned according to the normal flow of the document.</td>
+            </tr>
+            <tr>
+              <td>Relative</td>
+                <td>Elements with position: relative are positioned relative to their normal position in the document flow. Other elements will not fill the gap left by this element when adjusted.</td>
+            </tr>
+            <tr>
+              <td>Absolute</td>
+                <td>Positioned concerning its nearest non-static ancestor. Elements with position: absolute are taken out of the normal document flow.</td>
+            </tr>
+            <tr>
+              <td>Sticky</td>
+                <td>Combines features of position: relative and position: fixed. The element is treated as position: relative until it reaches a specified threshold, then it becomes position: fixed.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>1. Static Positioning</h2>
+    <p>Static is the default position of an element. It does not accept properties like top, left, right, or bottom. Static Position scroll. The boxes follow the normal flow of the document. • There's no overlap or displacement of elements. Integration 2-7.</p>
+
+    <div class="code-window">
+<span class="green">&lt;!-- Driver Code Starts --&gt;</span>
+<span class="red">&lt;html&gt;</span>
+<span class="red">&lt;head&gt;</span>
+<span class="green">&lt;!-- Driver Code Ends --&gt;</span>
+
+<span class="red">&lt;style&gt;</span>
+<span class="red">  div</span> {
+<span class="blue">    border:</span> 1px solid black;
+<span class="blue">    padding:</span> 10px;
+<span class="blue">    margin:</span> 10px;
+  }
+<span class="red">&lt;/style&gt;</span>
+
+<span class="green">&lt;!-- Driver Code Starts --&gt;</span>
+<span class="red">&lt;/head&gt;</span>
+<span class="red">&lt;body&gt;</span>
+
+<span class="red">  &lt;div&gt;</span>Box 1<span class="red">&lt;/div&gt;</span>
+<span class="red">  &lt;div&gt;</span>Box 2<span class="red">&lt;/div&gt;</span>
+
+<span class="red">&lt;/body&gt;</span>
+<span class="red">&lt;/html&gt;</span>
+<span class="green">&lt;!-- Driver Code Ends --&gt;</span>
+    </div>
+
+    <h3>EXAMPLE: static EXAMPLE.htm CSS static.css</h3>
+    <div class="code-window">
+*
+{
+}
+2345678
+<span class="blue">box-sizing:</span> border-box;
+.box {
+<span class="blue">display:</span> inline-block;
+<span class="blue">height:</span> 50px;
+<span class="blue">background:</span> red;
+<span class="blue">width:</span> 200px;
+<span class="blue">color:</span> white;
+
+ #one {
+<span class="blue">position:</span> static;
+<span class="blue">background-color: BLUE;</span>
+<span class="blue">text-align:</span> center;
+    </div>
+
+    <h2>2. Relative Positioning</h2>
+    <p>Relative positioning places an element relative to its normal position. You can move it using top, left, right, or bottom. Box 2 is shifted 20px down and 30px to the right from its normal position. Integration 2-9.</p>
+
+    <div class="code-window">
+ <span class="green">&lt;!--Driver Code Starts[--&gt;</span>
+ <span class="red">&lt;html&gt;</span>
+<span class="red">&lt;head&gt;</span>
+ <span class="green">&lt;!--Driver Code Ends }--&gt;</span>
+<span class="red">&lt;style&gt;</span>
+<span class="red">div</span> { <span class="blue">border:</span> 1px solid black; <span class="blue">padding:</span> 10px; <span class="blue">margin:</span> 10px; }
+.relative {
+<span class="blue">position:</span> relative;
+<span class="blue">top:</span> 20px;
+<span class="blue">left:</span> 30px;
+}
+<span class="red">&lt;/style&gt;</span>
+ <span class="red">&lt;body&gt;</span>
+<span class="red">&lt;div&gt;</span>Box 1<span class="red">&lt;/div&gt;</span>
+<span class="red">&lt;div class="relative"&gt;</span>Box 2<span class="red">&lt;/div&gt;</span>
+/body&gt; </div>
+
+  <h3>EXAMPLE: RELATIVE EAMPLE.htm EXTERNAL CSS RELATIVE.css</h3>
+    <div class="code-window">
+* { <span class="blue">box-sizing:</span> border-box; }
+.box {
+<span class="blue">display:</span> inline-block; <span class="blue">width:</span> 200px; <span class="blue">height:</span> 50px; 
+<span class="blue">background:</span> red; <span class="blue">color:</span> white; 
+
+ #three {
+<span class="blue">position:</span> relative;
+<span class="blue">top:</span> 50px;
+<span class="blue">left:</span> 60px;
+<span class="blue">background: blue;</span>
+}
+  </div>
+
+    <div class="system-text">
+        <p>File C:/Users/Lenovo/Desktop/Temp Location 8/UFE - 2024 - 2025/2nd semester/R2.12 INT</p>
+        <p>Import favorites M Gmail YouTube Maps 0478_w23_qp_21.pdf</p>
+      <p>One Two Three Four</p>
+    </div>
+</div>
+
+</body>
+</html>
