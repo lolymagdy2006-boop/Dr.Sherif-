@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration - PRE-REQUISITE: DIV TAG</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e7f1ff;
+            --dark-blue: #003366;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: #333;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--dark-blue);
+        }
+
+        header h1, header h2 {
+            color: var(--white);
+            margin: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            background: var(--light-blue);
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--dark-blue);
+            border-bottom: 1px solid #b6d4fe;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-left: 6px solid var(--primary-blue);
+            background: var(--gray);
+            border-radius: 0 8px 8px 0;
+        }
+
+        h3 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+
+        /* CSS Art Styles */
+        .art-demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 30px;
+            background: var(--white);
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: #6600CC;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+        }
+
+        .egypt-flag {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .first-red { height: 100px; width: 500px; background-color: red; }
+        .white-stripe { height: 100px; width: 500px; background-color: white; }
+        .second-black { height: 100px; width: 500px; background-color: black; }
+
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-info">
+        Tel: 01501827070 - 01017776756 | E-mail: sherrost@yahoo.com
+    </div>
+
+    <header>
+        <h1>Integration</h1>
+        <h2>PRE-REQUISITE: DIV TAG</h2>
+    </header>
+
+    <div class="container">
+        <section>
+            <h3>What is a Div Tag?</h3>
+            <p>The HTML division tag, called "div" for short, is a special element that lets you group similar sets of content together on a web page. You can use it as a generic container for associating similar content.</p>
+            <p>The div tag is one of the most used tags and doesn't seem to be going anywhere despite the introduction of semantic elements.</p>
+        </section>
+
+        <section>
+            <h3>1. Use div in Web Layouts</h3>
+            <p>You'll primarily use the div tag to group similar content together so you can style it easily. A great example of this is using div to group different sections of a webpage together.</p>
+            <p>You can put together the header, nav, sections, and footer of a page in an individual div tag so they can be styled together. Div itself does not have a direct effect on the presentation of the content unless you style it.</p>
+            
+        </section>
+
+        <section>
+            <h3>2. Use div in CSS Art</h3>
+            <p>With the div tag, you can make various shapes and draw anything because it is easy to style.</p>
+            
+            <h4>How to make a square with the div tag</h4>
+            <p>To make a square with div tag, you first need to define an empty div tag and attach a class attribute to it in the HTML. In the CSS, select the div with the class attribute, then set an equal height and width for it.</p>
+            <div class="code-block">
+                .square {<br>
+                &nbsp;&nbsp;background-color: #6600CC;<br>
+                &nbsp;&nbsp;width: 200px;<br>
+                &nbsp;&nbsp;height: 200px;<br>
+                }
+            </div>
+            <div class="art-demo">
+                <div class="square"></div>
+            </div>
+
+            <h4>How to make a circle with the div tag</h4>
+            <p>To make a circle, you define the dimensions and add the border-radius property set to 50%.</p>
+            <div class="code-block">
+                .circle {<br>
+                &nbsp;&nbsp;background-color: #2ecc71;<br>
+                &nbsp;&nbsp;width: 200px;<br>
+                &nbsp;&nbsp;height: 200px;<br>
+                &nbsp;&nbsp;border-radius: 50%;<br>
+                }
+            </div>
+            <div class="art-demo">
+                <div class="circle"></div>
+            </div>
+        </section>
+
+        <section>
+          <h3>3. Making the Egyptian flag with the div tag</h3>
+          <p>The flag is a rectangular shape with the colors red, white, and black. To make it, define 3 div tags and attach different classes, then style them appropriately in the CSS.</p>
+	      <div class="code-block">
+                <p> &lt;head&gt;&nbsp;</p>
+            <p>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt; &lt;title&gt;Untitled 1&lt;/title&gt;</p>
+            <p>&nbsp;&lt;link rel="stylesheet" type="text/css" href="flag.css" /&gt;&nbsp;</p>
+            <p>&lt;/head&gt;&nbsp;</p>
+            <p>&lt;body&gt;</p>
+            <p>&nbsp;&lt;div class="egypt-flag"&gt;</p>
+            <p>&nbsp;&lt;div class="first-red"&gt;&lt;/div&gt;&nbsp;</p>
+            <p>&lt;div class="white"&gt;&lt;/div&gt;</p>
+            <p>&nbsp;&lt;div class="second-black"&gt;&lt;/div&gt;</p>
+            <p>&nbsp;&lt;/div&gt;&nbsp;</p>
+                <p>&lt;/body&gt;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;   &nbsp;</p>
+          </div>
+          <div class="art-demo">
+                <div class="egypt-flag">
+                    <div class="first-red"></div>
+                    <div class="white-stripe"></div>
+                    <div class="second-black"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        Integration 2-1 to 2-5 | PRE-REQUEST: DIV TAG
+    </footer>
+
+</body>
+</html>
