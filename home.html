@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Development Back-End Target Skills</title>
-  <link rel="stylesheet" href="Front end .css">
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -14,90 +16,96 @@
   
 <header class="home-header">
   <div class="logo-container" style="margin-bottom: 20px;">
-    <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+      <a href="Dr.SherifN.html">
+         <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+      </a>
   </div>
 
-<!-- ========== HERO SECTION ========== -->
-  <h1>Development Back-End Target Skills</h1>
-  <p>
+  <h1>Development Back-End </h1>
+  <p class="intro">
     This website presents the core back-end development skills required to build
     modern, scalable, and high-performance web applications.
     Each skill is explained in a dedicated page with clear concepts and practical understanding.
   </p>
-  
+</header>
 
-<!-- ========== CAROUSEL SECTION ========== -->
 <section class="carousel-section">
-  <h2 class="carousel-title">  
-  </i>Explore the Syllabus</h2>
-  <div class="carousel-track">
-<a href="section1.html" class="card-link">
-    <div class="card">
-      <img src="img14.jfif">
-      <div class="card-content">
-        <h3>Server-Side Frameworks</h3>
-        <p>Backend logic, APIs & web services</p>
+  <h2 class="carousel-title">Explore the Syllabus</h2>
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <div class="path-card">
+          <a href="section1.html" class="card">
+            <img src="img14.jfif" alt="Server-Side Frameworks" class="card-img">
+            <div class="card-content">
+              <span class="card-number">01</span>
+              <div class="card-icon"><i data-lucide="server"></i></div>
+              <h3>Server-Side Frameworks</h3>
+              <p>Backend logic, APIs & web services</p>
+            </div>
+          </a>
+        </div>
+        <div class="path-card">
+          <a href="section2.html" class="card">
+            <img src="img12.png" alt="Object-Oriented Programming" class="card-img">
+            <div class="card-content">
+              <span class="card-number">02</span>
+              <div class="card-icon"><i data-lucide="code"></i></div>
+              <h3>Object-Oriented Programming</h3>
+              <p>Reusable components & clean code</p>
+            </div>
+          </a>
+        </div>
+        <div class="path-card">
+          <a href="section3.html" class="card">
+            <img src="img13.jpg" alt="Web Services" class="card-img">
+            <div class="card-content">
+              <span class="card-number">03</span>
+              <div class="card-icon"><i data-lucide="globe"></i></div>
+              <h3>Web Services</h3>
+              <p>Objects, standards & data exchange</p>
+            </div>
+          </a>
+        </div>
+        <div class="path-card">
+          <a href="section4.html" class="card">
+            <img src="img17.png" alt="Framework Discovery" class="card-img">
+            <div class="card-content">
+              <span class="card-number">04</span>
+              <div class="card-icon"><i data-lucide="search"></i></div>
+              <h3>Framework Discovery</h3>
+              <p>Architecture, MVC & use cases</p>
+            </div>
+          </a>
+        </div>
+        <div class="path-card">
+          <a href="section5.html" class="card">
+            <img src="img15.jpg" alt="Design Patterns" class="card-img">
+            <div class="card-content">
+              <span class="card-number">05</span>
+              <div class="card-icon"><i data-lucide="puzzle"></i></div>
+              <h3>Design Patterns</h3>
+              <p>Factory, Adapter & Observer</p>
+            </div>
+          </a>
+        </div>
+        <div class="path-card">
+          <a href="test.html" class="card">
+            <img src="img16.jpg" alt="Final Test" class="card-img">
+            <div class="card-content">
+              <span class="card-number">06</span>
+              <div class="card-icon"><i data-lucide="check-circle"></i></div>
+              <h3>Final Test</h3>
+              <p>Evaluate your understanding of all sections</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-</a>
-
-<a href="section2.html" class="card-link">
-    <div class="card">
-      <img src="img12.png">
-      <div class="card-content">
-        <h3>Object-Oriented Programming</h3>
-        <p>Reusable components & clean code</p>
-      </div>
-    </div>
-</a>
-
-<a href="section3.html" class="card-link">
-    <div class="card">
-      <img src="img13.jpg">
-      <div class="card-content">
-        <h3>Web Services</h3>
-        <p>Objects, standards & data exchange</p>
-      </div>
-    </div>
-</a>
-
-<a href="section4.html" class="card-link">
-    <div class="card">
-      <img src="img17.png">
-      <div class="card-content">
-        <h3>Framework Discovery</h3>
-        <p>Architecture, MVC & use cases</p>
-      </div>
-    </div>
-</a>
-
-<a href="section5.html" class="card-link">
-    <div class="card">
-      <img src="img15.jpg">
-      <div class="card-content">
-        <h3>Design Patterns</h3>
-        <p>Factory, Adapter & Observer</p>
-      </div>
-    </div>
-</a>
-
-<a href="test.html" class="card-link">
-        <div class="card">
-      <img src="img16.jpg">
-      <div class="card-content">
-        <h3>Final Test</h3>
-        <p>Evaluate your understanding of all sections</p>
-      </div>
-    </div>
-    
-</a>
-
   </div>
-
 </section>
 
-<script src="home.js"></script>
+<script src="Front-end development.js"></script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
-
-
