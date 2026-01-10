@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Target Skills</title>
+  <link rel="stylesheet" href="Front-end development.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn" id="yearBtn">Select Year</button>
+      <div class="dropdown-content">
+        <a href="javascript:void(0)" onclick="selectYear('Year 1')">Year 1</a>
+        <a href="javascript:void(0)" onclick="selectYear('Year 2')">Year 2</a>
+        <a href="javascript:void(0)" onclick="selectYear('Year 3')">Year 3</a>
+        <a href="javascript:void(0)" onclick="selectYear(null)">Reset</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" id="semBtn">Select Semester</button>
+      <div class="dropdown-content">
+        <a href="javascript:void(0)" onclick="selectSemester('Semester 1')">Semester 1</a>
+        <a href="javascript:void(0)" onclick="selectSemester('Semester 2')">Semester 2</a>
+        <a href="javascript:void(0)" onclick="selectSemester(null)">Reset</a>
+      </div>
+    </div>
+  </div>
+<header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+    <a href="index.html">
+      <img src="Dr.sherif.jpg" alt="University Logo" class="main-logo">
+    </a>
+  </div>
+ 
+  <h1>Dr.Sherif Rostom</h1>
+  <p class="intro" id="status-text">
+      Please select a Year and Semester from the menu above.
+  </p>
+</header>
+<section class="carousel-section">
+  <h2 class="carousel-title">Explore the Syllabus</h2>
+  <div class="carousel-wrapper">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+<!-- Year 1 Semester 1 Cards -->
+    <div class="path-card" data-year="Year 1" data-semester="Semester 1">
+        <a class="card" href="Integration.html">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80" alt="Problem Solving" class="card-img">
+          <div class="card-content">
+            <span class="card-number">01</span>
+            <div class="card-icon"><i data-lucide="brain"></i></div>
+            <h3>Integration</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=300&q=80" alt="Entrepreneurship" class="card-img">
+          <div class="card-content">
+            <span class="card-number">02</span>
+            <div class="card-icon"><i data-lucide="rocket"></i></div>
+            <h3>Web Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 1">
+        <a class="card" href="Skill3M.html">
+          <img src="https://images.unsplash.com/photo-1508921340878-ba53e1f016ec?auto=format&fit=crop&w=300&q=80" alt="SAE Framework" class="card-img">
+          <div class="card-content">
+            <span class="card-number">03</span>
+            <div class="card-icon"><i data-lucide="component"></i></div>
+            <h3>Hosting</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="download.webp" alt="UX" class="card-img">
+          <div class="card-content">
+            <span class="card-number">04</span>
+            <div class="card-icon"><i data-lucide="smile"></i></div>
+            <h3>Information representation and processing</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <!-- Year 1 Semester 2 Cards -->
+    <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+        <a class="card" href="Integration.html">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" alt="Client Side" class="card-img">
+          <div class="card-content">
+            <span class="card-number">05</span>
+            <div class="card-icon"><i data-lucide="monitor"></i></div>
+            <h3>Integration</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=300&q=80" alt="Server Side" class="card-img">
+          <div class="card-content">
+            <span class="card-number">06</span>
+            <div class="card-icon"><i data-lucide="server"></i></div>
+            <h3>Web Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=300&q=80" alt="Security" class="card-img">
+          <div class="card-content">
+            <span class="card-number">07</span>
+            <div class="card-icon"><i data-lucide="shield-check"></i></div>
+            <h3>produce a website</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">08</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Hosting</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+    <div class="path-card" data-year="Year 1" data-semester="Semester 2">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">09</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Information representation and processing</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+    </div>
+      <!-- Year 2 Semester 1 Cards -->
+<div class="path-card" data-year="Year 2" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">10</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Front-end Development and Integration</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 2" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">11</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Back-end Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 2" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">12</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Web Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 2" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">13</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Information representation and processing</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 2" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">14</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Referencing</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<!-- Year 2 Semester 2 Cards -->
+    <div class="path-card" data-year="Year 2" data-semester="Semester 2">
+        <a class="card" href="Front-end development.html">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">15</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Front-end Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 2" data-semester="Semester 2">
+        <a class="card" href="home.html">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">16</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Back-end Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 2" data-semester="Semester 2">
+        <a class="card" href="web development.html">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">17</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Web Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<!-- Year 3 Semester 1 Cards -->
+    <div class="path-card" data-year="Year 3" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">18</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Advanced Front-End Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 3" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">19</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Advanced Back-End Development</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<div class="path-card" data-year="Year 3" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">20</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Interactive Devices</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+    <div class="path-card" data-year="Year 3" data-semester="Semester 1">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">21</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Hosting and Cybersecurity</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+<!-- Year 3 Semester 2 Cards -->
+    <div class="path-card" data-year="Year 3" data-semester="Semester 2">
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Performance" class="card-img">
+          <div class="card-content">
+            <span class="card-number">22</span>
+            <div class="card-icon"><i data-lucide="zap"></i></div>
+            <h3>Web development and Interactive Devices</h3>
+            <p>Syllabus and course materials</p>
+          </div>
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="Front-end development.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
