@@ -2,7 +2,6 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +13,6 @@ body {
   color: #003366;
   overflow-x: hidden;
 }
-
 /* 2. Navbar & Dropdown */
 .navbar {
   display: flex;
@@ -32,12 +30,10 @@ body {
   /* CHANGED: Border color to faint navy */
   border-bottom: 1px solid rgba(0, 51, 102, 0.1);
 }
-
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropbtn {
   background-color: transparent;
   /* CHANGED: From light blue to Dark Navy */
@@ -49,11 +45,9 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .dropbtn:hover {
   color: #004d99; /* Slightly lighter navy on hover */
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -66,7 +60,6 @@ body {
   right: 0;
   border: 1px solid rgba(0, 51, 102, 0.1);
 }
-
 .dropdown-content a {
   /* CHANGED: Text color to Dark Navy */
   color: #003366;
@@ -74,15 +67,12 @@ body {
   text-decoration: none;
   display: block;
 }
-
 .dropdown-content a:hover {
   background-color: #f0f4f8; /* Light grey/blue hover effect */
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 /* 3. Logo Section */
 .portal-nav {
   display: flex;
@@ -91,7 +81,6 @@ body {
   /* CHANGED: Match body background */
   background: #aecaf5;
 }
-
 .main-logo {
   height: 80px;
   /* CHANGED: White background to frame logo */
@@ -99,9 +88,8 @@ body {
   border-radius: 8px;
   padding: 5px; /* Added padding so logo doesn't touch edges */
 }
-
 /* 4. Hero & Header */
-.hero {
+.hero, .home-header {
   text-align: center;
   padding: 20px 10px;
   /* CHANGED: To Dark Navy Gradient */
@@ -111,15 +99,18 @@ body {
   margin-bottom: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-/* 5. Carousel Section */
+.intro {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+}
+/* 5. Carousel Section (Modified to Static Grid) */
 .carousel-section {
   padding: 6px 0;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .carousel-title {
   text-align: center;
   /* CHANGED: Title color to Dark Navy */
@@ -128,99 +119,105 @@ body {
   font-size: 1rem;
   font-weight: bold;
 }
-
 .carousel-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding: 8px 0;
 }
-
 .carousel-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 30s linear infinite;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+  width: 100%;
 }
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
-/* Even Smaller Generic Card Style */
-.card {
+/* Even Smaller Generic Card Style (Merged and Adjusted for Grid) */
+.card, .path-card {
   flex: 0 0 auto;
-  width: 120px;
+  width: auto;
   /* CHANGED: Card background to White */
   background: #ffffff;
   border-radius: 12px;
-  margin: 0 6px;
+  margin: 0;
   overflow: hidden;
   /* CHANGED: Shadow style */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
+  padding: 12px;
+  align-items: center;
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  text-decoration: none;
+  color: #003366;
 }
-
-.card:hover {
+.card:hover, .path-card:hover {
   transform: translateY(-5px);
 }
-
 .card img {
   width: 100%;
-  height: 50px;
+  height: 80px;
   object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
-
 .card-content {
-  padding: 6px;
-  font-size: 0.6rem;
+  padding: 10px;
+  font-size: 0.8rem;
   /* CHANGED: Text color to Dark Navy */
   color: #003366;
   text-align: center;
+  width: 100%;
 }
-
-/* Even Smaller Path Card Style inside Carousel */
-.carousel-track .path-card {
-  flex: 0 0 auto;
-  width: 150px;
-  padding: 8px;
-  margin: 0 6px;
-  /* CHANGED: Background to White */
-  background: #ffffff;
-  border-radius: 12px;
-  text-decoration: none;
+.card-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #003366;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  /* CHANGED: Text color */
-  color: #003366;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 51, 102, 0.1);
+  justify-content: center;
+  margin-bottom: 10px;
 }
-
-.carousel-track .path-card .card-icon {
-  width: 25px;
-  height: 25px;
+.card-icon, .path-card .card-icon {
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   /* CHANGED: Icon background to light blue */
   background: #aecaf5;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #003366;
 }
-
-.carousel-track .path-card h3 {
-  font-size: 0.8rem;
-  margin: 4px 0;
+.card h3, .path-card h3 {
+  font-size: 1.1rem;
+  margin: 6px 0;
   text-align: center;
   /* CHANGED: Heading color */
   color: #003366;
 }
-
-/* Arrows */
+.path-card p {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.explore-link {
+  color: #003366;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s;
+}
+.explore-link:hover {
+  color: #004d99;
+}
+/* Arrows (kept for compatibility if needed) */
 .arrow {
   position: absolute;
   top: 50%;
@@ -241,25 +238,50 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
-
 .arrow:hover {
   background: #003366;
   color: #ffffff;
 }
-
 .arrow.left {
   left: 10px;
 }
-
 .arrow.right {
   right: 10px;
 }
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* 6. Final Test Section */
+.final-test {
+  background-color: #003366; /* Dark navy background */
+  border-radius: 24px; /* Adjusted rounded corners */
+  padding: 60px 40px; /* More padding for spacing */
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  color: #ffffff; /* White text */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Adjusted shadow */
+}
+.final-test h2 {
+  font-size: 2rem; /* Larger title */
+  margin-bottom: 10px;
+}
+.test-desc {
+  font-size: 1.1rem; /* Slightly larger desc */
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+.test-btn {
+  background-color: #004d99; /* Lighter navy button background */
+  color: #ffffff; /* White text on button */
+  border: none;
+  border-radius: 50px; /* Pill-shaped */
+  padding: 14px 28px; /* Adjusted padding */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.test-btn:hover {
+  background-color: #003366; /* Darker on hover */
+}
+.hidden {
+  display: none;
 }
