@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Systems</title>
+  <link rel="stylesheet" href="Front-end development.css">
+</head>
+<body>
+
+<header class="home-header">
+  <div class="logo-container" style="margin-bottom: 20px;">
+      <a href="Dr.SherifN.html">
+         <img src="logo PS.png" alt="University Logo" class="logo" style="width: 120px; height: auto;">
+      </a>
+  </div>
+
+  <h1>Information Systems</h1>
+
+  <p class="intro">
+  This page introduces the core concepts of Information Systems.
+  It focuses on how data is structured, stored, managed, and exchanged
+  using databases and modern data formats.
+  These concepts are essential for building reliable and efficient web
+  and information systems.
+  </p>
+</header>
+
+<section class="carousel-section">
+  <h2 class="carousel-title"></i>Explore the Syllabus</h2>
+
+  <div class="carousel-wrapper">
+
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=300&q=80" alt="Database Fundamentals" class="card-img">
+          <div class="card-content">
+            <i data-lucide="refresh-cw"></i>
+            <h3>Database Fundamentals</h3>
+            <p>Organized storage of data that allows easy access, management, and updates.</p>
+          </div>
+        </a>
+        
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=300&q=80" alt="SQL Language" class="card-img">
+          <div class="card-content">
+            <i data-lucide="database"></i>
+            <h3>SQL Language Basics</h3>
+            <p>Using SQL commands to create tables and insert, update, and retrieve data.</p>
+          </div>
+        </a>
+        
+        <a class="card" href="">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80" alt="Entities and Relationships" class="card-img">
+            <div class="card-content">
+            <i data-lucide="layout-template"></i>
+            <h3>Entities & Relationships</h3>
+            <p>Representing real-world objects and defining how they are connected in a database.</p>
+          </div>
+        </a>
+        
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80" alt="RDBMS Tools" class="card-img">
+          <div class="card-content">
+            <i data-lucide="zap"></i>
+            <h3>RDBMS Tools</h3>
+            <p>Software systems used to manage relational databases efficiently and securely.</p>
+          </div>
+        </a>
+
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=300&q=80" alt="Database Operations" class="card-img">
+          <div class="card-content">
+            <i data-lucide="globe"></i>
+            <h3>Database Operations</h3>
+            <p>Managing databases using console tools, client software, and web interfaces.</p>
+          </div>
+        </a>
+
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" alt="Data Exchange Formats" class="card-img">
+          <div class="card-content">
+            <i data-lucide="hard-drive"></i>
+            <h3>Data Exchange Formats</h3>
+            <p>Standard formats used to share data between systems such as CSV, XML, and JSON.</p>
+          </div>
+        </a>
+
+        <a class="card" href="">
+          <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=300&q=80" alt="Backup and Migration" class="card-img">
+          <div class="card-content">
+            <i data-lucide="save"></i>
+            <h3>Backup & Migration</h3>
+            <p>Protecting data by creating backups and moving databases between systems.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+</section>
+
+<section class="final-test" id="finalTest">
+  <h2>Front-End Core Assessment</h2>
+  <p class="test-desc">Test your knowledge of HTML, CSS, and Client-Side JS. You have <strong>5 minutes</strong>.</p>
+  
+  <button id="startTestBtn" class="test-btn">Start Front-End Test</button>
+
+  <div id="testContainer" class="hidden" style="display:none;">
+    <div class="test-header">
+      <span id="timer">05:00</span>
+    </div>
+    <div id="questionsArea"></div>
+    <button id="submitTestBtn" class="test-btn">Submit Test</button>
+    <div id="testResult"></div>
+  </div>
+</section>
+
+<script src="Front-end development.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+
+</html>
