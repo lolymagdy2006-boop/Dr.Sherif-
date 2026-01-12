@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layouts - Positioning</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="cdnjs.cloudflare.com" rel="stylesheet" />
+    <script src="cdnjs.cloudflare.com"></script>
+
+    <style>
+        /* Position Table Styles */
+        .position-table-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            overflow-x: auto;
+        }
+
+        .position-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .position-table thead {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+        }
+
+        .position-table th {
+            padding: 20px 25px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .position-table td {
+            padding: 22px 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            vertical-align: top;
+        }
+
+        .position-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .position-table tbody tr:hover {
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        .position-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .position-name {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .position-name::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+        }
+
+        .position-desc {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Code Example Styles */
+        .example-section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+
+        .example-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .example-box:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.15);
+        }
+
+        .example-title {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .example-title .badge {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .example-subtitle {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .code-result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .code-css-result-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .code-block {
+            background: #0a0f1e;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .code-header {
+            background: #1e293b;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot.red {
+            background: #ef4444;
+        }
+
+        .code-dot.yellow {
+            background: #eab308;
+        }
+
+        .code-dot.green {
+            background: #22c55e;
+        }
+
+        .code-header span {
+            margin-left: 10px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .code-content {
+            padding: 20px;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            overflow-x: auto;
+        }
+
+        .code-content .tag {
+            color: #f472b6;
+        }
+
+        .code-content .attr {
+            color: #a78bfa;
+        }
+
+        .code-content .value {
+            color: #34d399;
+        }
+
+        .code-content .property {
+            color: #60a5fa;
+        }
+
+        .code-content .selector {
+            color: #fbbf24;
+        }
+
+        .code-content .comment {
+            color: #64748b;
+        }
+
+        .result-block {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-header {
+            background: #f1f5f9;
+            padding: 12px 18px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .result-header span {
+            color: #475569;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .result-content {
+            padding: 0;
+        }
+
+        .result-content img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .section-title .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-placeholder"
+                style="width:42px; height:42px; background: var(--primary-blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">
+                CSS</div>
+            <h2>CSS Layouts</h2>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>CSS Positioning</h1>
+        <p>Master the art of positioning elements in CSS to create stunning layouts.</p>
+    </header>
+
+    <main>
+
+        <!-- Position Property Table -->
+        <div class="section-title">
+            <div class="icon">📐</div>
+            <h2>Position Property Overview</h2>
+            <p>Understanding the five CSS position values</p>
+        </div>
+
+        <div class="position-table-container">
+            <table class="position-table">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Position</th>
+                        <th>Property Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="position-name">Fixed</span></td>
+                        <td class="position-desc">An element with <code
+                                style="color: var(--accent-green);">position: fixed</code> property remains in the same
+                            position relative to the viewport even when the page is scrolled.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="position-name">Static</span></td>
+                        <td class="position-desc">Default positioning method. Elements with <code
+                                style="color: var(--accent-green);">position: static</code> are positioned according to
+                            the normal flow of the document.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="position-name">Relative</span></td>
+                        <td class="position-desc">Elements with <code
+                                style="color: var(--accent-green);">position: relative</code> are positioned relative to
+                            their normal position in the document flow. Other elements will not fill the gap left by
+                            this element when adjusted.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="position-name">Absolute</span></td>
+                        <td class="position-desc">Positioned concerning its nearest non-static ancestor. Elements with
+                            <code style="color: var(--accent-green);">position: absolute</code> are taken out of the
+                            normal document flow.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="position-name">Sticky</span></td>
+                        <td class="position-desc">Combines features of <code
+                                style="color: var(--accent-green);">position: relative</code> and <code
+                                style="color: var(--accent-green);">position: fixed</code>. The element is treated as
+                            position: relative until it reaches a specified threshold, then it becomes position: fixed.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Examples Section -->
+        <div class="section-title">
+            <div class="icon">💻</div>
+            <h2>Code Examples</h2>
+            <p>See positioning in action with practical examples</p>
+        </div>
+
+        <div class="example-section">
+
+            <!-- Example 1.1: Static Position -->
+            <div class="example-box">
+                <h3 class="example-title">
+                    <span class="badge">Example 1.1</span>
+                    Static Position
+                </h3>
+                <p class="example-subtitle">Elements follow the normal document flow - the default behavior</p>
+
+                <div class="code-result-grid">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span>index.html</span>
+                        </div>
+                        <div class="code-content">
+                            <img src="code_static.png" alt="Static Position HTML Code" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+
+                    <div class="result-block">
+                        <div class="result-header">
+                            <span>📺 Output Result</span>
+                        </div>
+                        <div class="result-content">
+                            <img src="static_position_result.png" alt="Static Position Example - boxes stacked in normal flow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Example 1.2: Static Position (HTML, CSS, Result) -->
+            <div class="example-box">
+                <h3 class="example-title">
+                    <span class="badge">Example 1.2</span>
+                    Static Position - Detailed Example
+                </h3>
+                <p class="example-subtitle">Complete example showing HTML structure, CSS styling, and visual result</p>
+
+                <div class="code-css-result-grid">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span>index.html</span>
+                        </div>
+                        <div class="code-content">
+                            <img src="code_static_ex1_html.png" alt="Static Position HTML Code" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span>style.css</span>
+                        </div>
+                        <div class="code-content">
+                            <img src="code_static_ex1_css.png" alt="Static Position CSS Code" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+
+                    <div class="result-block">
+                        <div class="result-header">
+                            <span>📺 Output Result</span>
+                        </div>
+                        <div class="result-content">
+                            <img src="code_static_ex1_result.png" alt="Static Position Example Result">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Example 2: Relative Position -->
+            <div class="example-box">
+                <h3 class="example-title">
+                    <span class="badge">Example 2.1</span>
+                    Relative Position
+                </h3>
+                <p class="example-subtitle">Elements are offset from their normal position without affecting other
+                    elements</p>
+
+                <div class="code-result-grid">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span>index.html</span>
+                        </div>
+                        <div class="code-content">
+                            <img src="code_relative.png" alt="Relative Position HTML Code" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+
+                    <div class="result-block">
+                        <div class="result-header">
+                            <span>📺 Output Result</span>
+                        </div>
+                        <div class="result-content">
+                            <img src="relative_position_result.png" alt="Relative Position Example - boxes with preserved spacing">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <!-- Example 4: Relative Position (HTML, CSS, Result) -->
+            <div class="example-box">
+                <h3 class="example-title">
+                    <span class="badge">Example 2.2</span>
+                    Relative Position - Detailed Example
+                </h3>
+                <p class="example-subtitle">Complete example showing HTML structure, CSS styling, and visual result</p>
+
+                <div class="code-css-result-grid">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span>index.html</span>
+                        </div>
+                        <div class="code-content">
+                            <img src="code_relative_ex1_html.png" alt="Relative Position HTML Code" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span>style.css</span>
+                        </div>
+                        <div class="code-content">
+                            <img src="code_relative_ex1_css.png" alt="Relative Position CSS Code" style="width: 100%; display: block;">
+                        </div>
+                    </div>
+
+                    <div class="result-block">
+                        <div class="result-header">
+                            <span>📺 Output Result</span>
+                        </div>
+                        <div class="result-content">
+                            <img src="code_relative_ex1_result.png" alt="Relative Position Example Result">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="final-objective" style="width: 80%; max-width: 900px; margin: 60px auto;">
+            <h4>🎯 Key Takeaways</h4>
+            <p>Understanding CSS positioning is fundamental to creating complex layouts. Remember:
+                <strong>static</strong> is the default, <strong>relative</strong> offsets from normal position,
+                <strong>absolute</strong> removes from flow, <strong>fixed</strong> stays on viewport, and
+                <strong>sticky</strong> combines relative and fixed behaviors.</p>
+        </div>
+
+        <!-- Quiz CTA -->
+        <div class="quiz-cta" style="width: 80%; max-width: 900px; margin: 60px auto;">
+            <h4>📝 Test Your Knowledge</h4>
+            <p>Scan the QR code to take the quiz on CSS Positioning</p>
+            <a href="https://forms.gle/aUBBUrMjxFFUptD78" target="_blank" class="qr-link">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://forms.gle/aUBBUrMjxFFUptD78&bgcolor=ffffff&color=000000" alt="Quiz QR Code" class="qr-code">
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CSS Layouts Educational Portal.</p>
+    </footer>
+
+</body>
+
+</html>
